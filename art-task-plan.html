@@ -178,57 +178,61 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <div class="noise"></div><div class="grid-lines"></div>
   <div class="corner-glyph" style="font-size:16rem;top:-30px;right:-20px">P</div>
   <span class="label anim-1">프리셋이란? <span style="font-size:.72rem;opacity:.5">WHAT IS A PRESET?</span></span>
-  <h2 class="anim-2">에셋의 모든 시각 속성을 숫자로 고정하는 템플릿</h2>
-  <div class="two-col anim-3" style="gap:48px">
+  <h2 class="anim-2" style="font-size:2.6rem">텍스트를 전부 1~10 숫자로 바꾼 에셋 템플릿</h2>
+  <p class="anim-2 kr-body" style="font-size:.95rem;color:var(--warm-gray);margin-bottom:8px">"밝은 파란색"이 아니라 <strong style="color:var(--ink)">brightness: 8 (HSV 80~90%, RGB 204~230)</strong>처럼 모든 시각 속성을 숫자 스케일로 변환</p>
+  <div class="two-col anim-3" style="gap:40px">
     <div>
-      <p class="kr-body" style="font-size:1.05rem;margin-bottom:16px">
-        프리셋은 <strong style="color:var(--terracotta)">에셋 하나를 만들기 위해 필요한 모든 시각 속성</strong>을 미리 정의해둔 템플릿입니다.
-        텍스트 설명 대신 숫자/코드만 들어가서, Task Plan에 이 프리셋 값을 넣으면 <strong style="color:var(--terracotta)">AI가 매번 동일한 에셋을 생성</strong>합니다.
-      </p>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">프리셋이 정의하는 항목들</div>
-      <div class="code-block" style="font-size:.82rem">
-        <span class="c">// 프리셋 = 이 모든 것을 숫자로 고정</span><br>
-        <span class="k">art_style</span>: <span class="v">"flat_design"</span> <span class="c">// 아트 스타일</span><br>
-        <span class="k">viewpoint</span>: <span class="v">"front, eye-level, 0°"</span> <span class="c">// 시점</span><br>
-        <span class="k">canvas</span>: <span class="v">64×64 px</span> <span class="c">// 캔버스 크기</span><br>
-        <span class="k">form</span>: <span class="v">"원형, 80% coverage"</span> <span class="c">// 형태</span><br>
-        <span class="k">color_primary</span>: <span class="v">#2E8B57</span> <span class="c">// 주 색상</span><br>
-        <span class="k">color_accent</span>: <span class="v">#FF6B6B</span> <span class="c">// 보조 색상</span><br>
-        <span class="k">shadow</span>: <span class="v">2단계, 좌상단 광원, 20%</span><br>
-        <span class="k">outline</span>: <span class="v">none</span> <span class="c">// 없는 것도 명시</span><br>
-        <span class="k">seed</span>: <span class="v">42</span> <span class="c">// 재현 파라미터</span>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">공통 프리셋 (5개) — 모든 에셋이 공유</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+        <div class="card" style="padding:12px 14px">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">BASIC</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">visual_complexity (1~10)<br>view_perspective (1~10)<br>structural_composition (1~10)</p>
+        </div>
+        <div class="card" style="padding:12px 14px">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">FORM</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">shape_type, proportion_ratio<br>symmetry_balance, density<br>edge_character, negative_space</p>
+        </div>
+        <div class="card" style="padding:12px 14px">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">COLOR</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">palette_count, saturation<br>brightness, contrast<br>color_temperature, metallic_shine</p>
+        </div>
+        <div class="card" style="padding:12px 14px">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">TEXTURE</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">detail_amount, roughness<br>pattern_order, hardness<br>oldness, natural_artificial</p>
+        </div>
+      </div>
+      <div class="card" style="padding:12px 14px;border-left:3px solid var(--terracotta)">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">ART STYLE</div>
+        <p class="kr-body" style="font-size:.75rem;margin-top:2px">visual_direction, rendering_style, retro_pixel_era, shading_technique, outline_thickness, edge_softness</p>
       </div>
     </div>
     <div>
-      <div class="card" style="border-top:3px solid #c0392b;margin-bottom:14px">
-        <div style="font-family:var(--font-mono);font-size:.68rem;color:#c0392b;margin-bottom:6px">프리셋 없이 (텍스트 명세)</div>
-        <div class="code-block" style="font-size:.85rem;margin:4px 0 0">
-          <span class="bad">"밝은 파란색 수박 캐릭터를 그려주세요"</span><br>
-          <span class="bad">"적당한 크기로 귀여운 느낌으로"</span><br>
-          <span class="c">// → AI가 매번 다른 결과</span>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">종류별 프리셋 — 에셋 타입마다 추가</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
+        <div class="card" style="padding:12px 14px;border-left:3px solid var(--sage)">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage)">CHARACTER</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">surface_type (skin/fur/scale), body_modifications, accessories_equipment, appendages (wing/tail/horn)</p>
+        </div>
+        <div class="card" style="padding:12px 14px;border-left:3px solid var(--lavender)">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lavender)">ENVIRONMENT / PROP</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">material_surface, shape_form (width/height/radius), distinctive_marks, appendages</p>
+        </div>
+        <div class="card" style="padding:12px 14px;border-left:3px solid var(--gold)">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gold)">UX/UI</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">component_spec (type/variant/size), visual_style, border_style</p>
+        </div>
+        <div class="card" style="padding:12px 14px;border-left:3px solid var(--blush)">
+          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--blush)">VFX</div>
+          <p class="kr-body" style="font-size:.75rem;margin-top:2px">particle_type (shape), visual_effect_style, color, pattern_type</p>
         </div>
       </div>
-      <div class="card" style="border-top:3px solid var(--sage);margin-bottom:14px">
-        <div style="font-family:var(--font-mono);font-size:.68rem;color:var(--sage);margin-bottom:6px">프리셋 적용 (숫자 명세)</div>
-        <div class="code-block" style="font-size:.85rem;margin:4px 0 0">
-          <span class="good">canvas: 64×64, color: #2E8B57,</span><br>
-          <span class="good">shadow: 2단계, outline: none</span><br>
-          <span class="c">// → 어떤 AI든 동일한 결과</span>
-        </div>
-      </div>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">핵심 원칙 3가지</div>
-      <div style="display:flex;gap:10px">
-        <div class="card" style="flex:1;padding:12px;text-align:center">
-          <h3 style="font-size:.95rem;font-family:var(--font-kr)">형용사 금지</h3>
-          <p class="kr-body" style="font-size:.75rem">"밝은" → <code style="color:var(--terracotta)">#87CEEB</code></p>
-        </div>
-        <div class="card" style="flex:1;padding:12px;text-align:center">
-          <h3 style="font-size:.95rem;font-family:var(--font-kr)">숫자로 고정</h3>
-          <p class="kr-body" style="font-size:.75rem">"적당히" → <code style="color:var(--terracotta)">64px</code></p>
-        </div>
-        <div class="card" style="flex:1;padding:12px;text-align:center">
-          <h3 style="font-size:.95rem;font-family:var(--font-kr)">없음도 명시</h3>
-          <p class="kr-body" style="font-size:.75rem">outline: <code style="color:#c0392b">none</code></p>
+      <div style="padding:12px 16px;background:rgba(0,0,0,.04);border-radius:10px;border-left:3px solid var(--terracotta)">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta);margin-bottom:4px">변환 예시</div>
+        <div class="code-block" style="font-size:.78rem;margin:0;padding:10px 12px">
+          <span class="c">// "매우 밝고 따뜻한 느낌" →</span><br>
+          <span class="k">brightness</span>: <span class="v">8</span> <span class="c">// HSV 80~90%, RGB 204~230</span><br>
+          <span class="k">color_temperature</span>: <span class="v">8</span> <span class="c">// 80~90% warm</span><br>
+          <span class="k">saturation</span>: <span class="v">7</span> <span class="c">// HSV 65~75%</span>
         </div>
       </div>
     </div>
