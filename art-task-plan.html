@@ -177,63 +177,75 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 <div class="slide" data-slide="2">
   <div class="noise"></div><div class="grid-lines"></div>
   <div class="corner-glyph" style="font-size:16rem;top:-30px;right:-20px">P</div>
-  <span class="label anim-1">프리셋이란? <span style="font-size:.72rem;opacity:.5">WHAT IS A PRESET?</span></span>
-  <h2 class="anim-2" style="font-size:2.6rem">텍스트를 전부 1~10 숫자로 바꾼 에셋 템플릿</h2>
-  <p class="anim-2 kr-body" style="font-size:.95rem;color:var(--warm-gray);margin-bottom:8px">"밝은 파란색"이 아니라 <strong style="color:var(--ink)">brightness: 8 (HSV 80~90%, RGB 204~230)</strong>처럼 모든 시각 속성을 숫자 스케일로 변환</p>
-  <div class="two-col anim-3" style="gap:40px">
+  <span class="label anim-1">Asteroid 산출물 <span style="font-size:.72rem;opacity:.5">WHAT WE BUILT</span></span>
+  <h2 class="anim-2" style="font-size:2.6rem">프리셋 + 스키마 + Task Plan JSON</h2>
+  <p class="anim-2 kr-body" style="font-size:.92rem;color:var(--warm-gray);margin-bottom:8px">수치화 가능한 건 <strong style="color:var(--ink)">프리셋(1~10)</strong>으로, 수치화 어려운 건 <strong style="color:var(--ink)">스키마</strong>로 분리하고, 최종 결과물은 <strong style="color:var(--ink)">Task Plan JSON</strong>으로 출력</p>
+  <div class="two-col anim-3" style="gap:36px">
     <div>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">공통 프리셋 (5개) — 모든 에셋이 공유</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
-        <div class="card" style="padding:12px 14px">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">BASIC <span style="color:var(--warm-gray)">기본</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">visual_complexity <span style="color:var(--warm-gray)">시각 복잡도</span><br>view_perspective <span style="color:var(--warm-gray)">시점/카메라 각도</span><br>structural_composition <span style="color:var(--warm-gray)">구조 구성</span></p>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:6px">① 공통 프리셋 (5개) — 수치화, 모든 에셋 공유</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">
+        <div class="card" style="padding:10px 12px">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--terracotta)">BASIC <span style="color:var(--warm-gray)">기본</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">시각 복잡도, 시점, 구조 구성</p>
         </div>
-        <div class="card" style="padding:12px 14px">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">FORM <span style="color:var(--warm-gray)">형태</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">shape_type <span style="color:var(--warm-gray)">형태 유형</span>, proportion_ratio <span style="color:var(--warm-gray)">비율</span><br>symmetry_balance <span style="color:var(--warm-gray)">대칭</span>, density <span style="color:var(--warm-gray)">밀도</span><br>edge_character <span style="color:var(--warm-gray)">엣지 성격</span>, negative_space <span style="color:var(--warm-gray)">여백</span></p>
+        <div class="card" style="padding:10px 12px">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--terracotta)">FORM <span style="color:var(--warm-gray)">형태</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">형태, 비율, 대칭, 밀도, 여백</p>
         </div>
-        <div class="card" style="padding:12px 14px">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">COLOR <span style="color:var(--warm-gray)">색상</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">palette_count <span style="color:var(--warm-gray)">색상 수</span>, saturation <span style="color:var(--warm-gray)">채도</span><br>brightness <span style="color:var(--warm-gray)">밝기</span>, contrast <span style="color:var(--warm-gray)">대비</span><br>color_temperature <span style="color:var(--warm-gray)">색온도</span>, metallic_shine <span style="color:var(--warm-gray)">금속 광택</span></p>
+        <div class="card" style="padding:10px 12px">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--terracotta)">COLOR <span style="color:var(--warm-gray)">색상</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">색상 수, 채도, 밝기, 대비, 색온도</p>
         </div>
-        <div class="card" style="padding:12px 14px">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">TEXTURE <span style="color:var(--warm-gray)">질감</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">detail_amount <span style="color:var(--warm-gray)">디테일 양</span>, roughness <span style="color:var(--warm-gray)">거칠기</span><br>pattern_order <span style="color:var(--warm-gray)">패턴 규칙성</span>, hardness <span style="color:var(--warm-gray)">단단함</span><br>oldness <span style="color:var(--warm-gray)">노후도</span>, natural_artificial <span style="color:var(--warm-gray)">자연/인공</span></p>
+        <div class="card" style="padding:10px 12px">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--terracotta)">TEXTURE <span style="color:var(--warm-gray)">질감</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">디테일, 거칠기, 패턴, 단단함, 노후도</p>
         </div>
       </div>
-      <div class="card" style="padding:12px 14px;border-left:3px solid var(--terracotta)">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">ART STYLE <span style="color:var(--warm-gray)">아트 스타일</span></div>
-        <p class="kr-body" style="font-size:.75rem;margin-top:2px">visual_direction <span style="color:var(--warm-gray)">시각 방향(사실↔추상)</span>, rendering_style <span style="color:var(--warm-gray)">렌더링</span>, retro_pixel_era <span style="color:var(--warm-gray)">레트로 시대</span>, shading_technique <span style="color:var(--warm-gray)">셰이딩</span>, outline_thickness <span style="color:var(--warm-gray)">외곽선 두께</span></p>
+      <div class="card" style="padding:10px 12px;border-left:3px solid var(--terracotta);margin-bottom:10px">
+        <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--terracotta)">ART STYLE <span style="color:var(--warm-gray)">아트 스타일</span></div>
+        <p class="kr-body" style="font-size:.7rem;margin-top:2px">사실↔추상, 렌더링, 레트로 시대, 셰이딩, 외곽선 두께</p>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:6px">② 종류별 프리셋 — 에셋 타입마다 추가 수치</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div class="card" style="padding:10px 12px;border-left:3px solid var(--sage)">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--sage)">CHARACTER <span style="color:var(--warm-gray)">캐릭터</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">표면 유형, 신체 변형, 장비, 부속</p>
+        </div>
+        <div class="card" style="padding:10px 12px;border-left:3px solid var(--lavender)">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--lavender)">ENV/PROP <span style="color:var(--warm-gray)">환경/오브젝트</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">재질, 형태, 부속</p>
+        </div>
+        <div class="card" style="padding:10px 12px;border-left:3px solid var(--gold)">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--gold)">UX/UI <span style="color:var(--warm-gray)">인터페이스</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">컴포넌트 타입, 시각 스타일, 테두리</p>
+        </div>
+        <div class="card" style="padding:10px 12px;border-left:3px solid var(--blush)">
+          <div style="font-family:var(--font-mono);font-size:.58rem;color:var(--blush)">VFX <span style="color:var(--warm-gray)">이펙트</span></div>
+          <p class="kr-body" style="font-size:.7rem;margin-top:2px">파티클 형태, 이펙트 스타일</p>
+        </div>
       </div>
     </div>
     <div>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">종류별 프리셋 — 에셋 타입마다 추가</div>
-      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
-        <div class="card" style="padding:12px 14px;border-left:3px solid var(--sage)">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage)">CHARACTER <span style="color:var(--warm-gray)">캐릭터</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">surface_type <span style="color:var(--warm-gray)">표면(피부/털/비늘)</span>, body_modifications <span style="color:var(--warm-gray)">신체 변형</span>, accessories <span style="color:var(--warm-gray)">장비</span>, appendages <span style="color:var(--warm-gray)">부속(날개/꼬리/뿔)</span></p>
-        </div>
-        <div class="card" style="padding:12px 14px;border-left:3px solid var(--lavender)">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lavender)">ENVIRONMENT / PROP <span style="color:var(--warm-gray)">환경/오브젝트</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">material_surface <span style="color:var(--warm-gray)">재질</span>, shape_form <span style="color:var(--warm-gray)">형태(가로/세로/반지름)</span>, distinctive_marks <span style="color:var(--warm-gray)">특징적 표식</span></p>
-        </div>
-        <div class="card" style="padding:12px 14px;border-left:3px solid var(--gold)">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gold)">UX/UI <span style="color:var(--warm-gray)">인터페이스</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">component_spec <span style="color:var(--warm-gray)">컴포넌트(타입/변형/크기)</span>, visual_style <span style="color:var(--warm-gray)">시각 스타일</span>, border_style <span style="color:var(--warm-gray)">테두리</span></p>
-        </div>
-        <div class="card" style="padding:12px 14px;border-left:3px solid var(--blush)">
-          <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--blush)">VFX <span style="color:var(--warm-gray)">이펙트</span></div>
-          <p class="kr-body" style="font-size:.75rem;margin-top:2px">particle_type <span style="color:var(--warm-gray)">파티클 형태</span>, visual_effect_style <span style="color:var(--warm-gray)">이펙트 스타일</span>, pattern_type <span style="color:var(--warm-gray)">패턴</span></p>
-        </div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:6px">③ 스키마 — 수치화 어려운 속성들</div>
+      <div class="card" style="padding:14px;margin-bottom:10px;border-left:3px solid var(--lavender)">
+        <p class="kr-body" style="font-size:.82rem">프리셋으로 숫자화하기 어려운 속성들을 별도로 정의<br><span style="color:var(--warm-gray);font-size:.75rem">distinctive_marks(특징적 표식), body_modifications(사이버네틱/문신/피어싱), accessories_equipment(무기/장식), 복합 구조 설명 등</span></p>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:6px">④ Task Plan JSON — 최종 출력물</div>
+      <div class="card" style="padding:14px;margin-bottom:12px;border-left:3px solid var(--gold)">
+        <p class="kr-body" style="font-size:.82rem">프리셋 숫자 + 스키마 텍스트를 합쳐서 AI가 읽고 바로 에셋을 생성할 수 있는 JSON 문서</p>
       </div>
       <div style="padding:12px 16px;background:rgba(0,0,0,.04);border-radius:10px;border-left:3px solid var(--terracotta)">
-        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta);margin-bottom:4px">변환 예시</div>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta);margin-bottom:4px">프리셋 변환 예시</div>
         <div class="code-block" style="font-size:.78rem;margin:0;padding:10px 12px">
           <span class="c">// "매우 밝고 따뜻한 느낌" →</span><br>
-          <span class="k">brightness</span>: <span class="v">8</span> <span class="c">// 밝기 HSV 80~90%, RGB 204~230</span><br>
+          <span class="k">brightness</span>: <span class="v">8</span> <span class="c">// 밝기 HSV 80~90%</span><br>
           <span class="k">color_temperature</span>: <span class="v">8</span> <span class="c">// 색온도 80~90% 따뜻함</span><br>
           <span class="k">saturation</span>: <span class="v">7</span> <span class="c">// 채도 HSV 65~75%</span>
         </div>
+      </div>
+      <div style="margin-top:10px;padding:12px 16px;background:rgba(0,0,0,.04);border-radius:10px">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray);margin-bottom:4px">정리</div>
+        <p class="kr-body" style="font-size:.78rem;max-width:unset"><strong style="color:var(--terracotta)">프리셋</strong> = 숫자화 가능한 시각 속성 (1~10 스케일)<br><strong style="color:var(--lavender)">스키마</strong> = 숫자화 어려운 서술형 속성<br><strong style="color:var(--gold)">Task Plan JSON</strong> = 프리셋 + 스키마 합친 최종 명세서</p>
       </div>
     </div>
   </div>
@@ -478,8 +490,8 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
         <p class="kr-body" style="font-size:.85rem">"불변성만으로는 공유 속성이 깨졌다", "생성 순서를 안 정했더니 일관성이 무너졌다" 같은 경험적 교훈</p>
       </div>
       <div class="card" style="padding:16px;border-left:3px solid var(--lavender)">
-        <h3 style="font-size:1rem;font-family:var(--font-kr)">전략 변경 이력</h3>
-        <p class="kr-body" style="font-size:.85rem">"v3에서 구조성을 추가한 이유", "Evolver 모드를 바꾼 근거" 등 왜 그렇게 결정했는지</p>
+        <h3 style="font-size:1rem;font-family:var(--font-kr)">하지 말아야 할 것</h3>
+        <p class="kr-body" style="font-size:.85rem">"이 개념을 적용했는데 실패율이 높았으니 다음엔 하지 말자", "이 조합은 효과가 없었다" 같은 부정 교훈</p>
       </div>
     </div>
     <div>
@@ -511,12 +523,12 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <h2 class="anim-2">두 마일스톤에서 배운 것</h2>
   <div class="lesson-grid anim-3" style="gap:24px">
     <div class="lesson-card" style="border-left:3px solid var(--terracotta)">
-      <h4 style="font-size:1.1rem">도메인 지식이 먼저다</h4>
-      <p style="font-size:.95rem">체계적으로 축적되지 않으면 프롬프트 미세 조정만 반복. KB든 문서든, 도메인 이해가 AI와 사람 모두에게 필수.</p>
+      <h4 style="font-size:1.1rem">Task Plan은 최대한 구체적이어야 한다</h4>
+      <p style="font-size:.95rem">AI가 읽고 바로 실행할 수 있을 정도로 구체적이어야 한다. 추상적이면 매번 다른 결과가 나온다. 프리셋으로 숫자화한 이유가 이것.</p>
     </div>
     <div class="lesson-card" style="border-left:3px solid var(--gold)">
-      <h4 style="font-size:1.1rem">평가가 생성보다 중요하다</h4>
-      <p style="font-size:.95rem">Ideation에서 평가 모델 효과(0.926)가 생성 모델 효과(0.479)의 2배. 잘 만드는 것보다 잘 평가하는 것이 품질을 더 끌어올린다.</p>
+      <h4 style="font-size:1.1rem">실험/파이프라인 설계에 시간을 더 쓰자</h4>
+      <p style="font-size:.95rem">빨리 돌리는 것보다 실험을 어떻게 설계할지, 파이프라인을 어떻게 구성할지 고민하는 시간이 더 중요했다.</p>
     </div>
     <div class="lesson-card" style="border-left:3px solid var(--sage)">
       <h4 style="font-size:1.1rem">고정 파이프라인의 한계</h4>
@@ -524,7 +536,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
     </div>
     <div class="lesson-card" style="border-left:3px solid var(--lavender)">
       <h4 style="font-size:1.1rem">기반을 갖추고 설계하라</h4>
-      <p style="font-size:.95rem">KB를 써보지도 않고 KB 기반 파이프라인을 설계하면 깨진다. retrieve, top-k, 실제를 먼저.</p>
+      <p style="font-size:.95rem">KB든 어떤 도구든, 동작 원리를 모르고 설계하면 깨진다. 먼저 써보고, 실험해보고, 이해한 다음에 설계해야 한다.</p>
     </div>
   </div>
   <div class="anim-4" style="display:flex;justify-content:center;align-items:center;gap:24px;margin-top:28px">
