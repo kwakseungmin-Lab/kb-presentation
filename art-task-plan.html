@@ -12,7 +12,7 @@
 :root{
   --cream:#faf9f5;--cream-dark:#f0eee6;
   --ink:#141413;--ink-light:#3d3d3a;
-  --terracotta:#d97757;--terracotta-deep:#c6613f;
+  --terracotta:#4a8c6f;--terracotta-deep:#3d7a5e;
   --muted:#75869680;--sand:#e3dacc;--warm-gray:#b0aea5;
   --sage:#bcd1ca;--blush:#ebcece;--lavender:#cbcadb;--gold:#d4a27f;
   --font-display:'Cormorant Garamond',Georgia,serif;
@@ -104,7 +104,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 <body>
 <div class="deck" id="deck">
 
-<!-- ===== 0: TITLE ===== -->
+<!-- ===== 0: TITLE — Winston Promise ===== -->
 <div class="slide slide--title active" data-slide="0">
   <div class="noise"></div>
   <div class="corner-glyph" style="font-size:28rem;top:-80px;right:-40px;color:rgba(255,255,255,.02)">A</div>
@@ -112,11 +112,55 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <span class="label anim-1">ART TASK PLAN &middot; 2025–2026</span>
   <h1 class="anim-2" style="margin-top:16px">Art Task Plan</h1>
   <p class="anim-3 kr" style="font-size:1.4rem;color:var(--warm-gray)">Asteroid에서 Breakout까지의 여정</p>
-  <p class="anim-3" style="font-size:1rem;color:rgba(255,255,255,.3);margin-top:4px">From Preset-based Specs to AI-driven Meta Iteration</p>
-  <div style="display:flex;gap:48px;margin-top:40px" class="anim-4">
-    <div style="text-align:center"><div class="num-big" style="color:var(--gold)">2</div><div style="font-family:var(--font-mono);font-size:.72rem;color:var(--warm-gray);margin-top:4px">MILESTONES</div></div>
-    <div style="text-align:center"><div class="num-big" style="color:var(--gold)">9+</div><div style="font-family:var(--font-mono);font-size:.72rem;color:var(--warm-gray);margin-top:4px">ITERATIONS</div></div>
-    <div style="text-align:center"><div class="num-big" style="color:var(--gold)">9</div><div style="font-family:var(--font-mono);font-size:.72rem;color:var(--warm-gray);margin-top:4px">CONCEPTS</div></div>
+  <div class="anim-4" style="width:48px;height:2px;background:var(--terracotta);margin:28px auto 24px"></div>
+  <p class="anim-5 kr" style="font-size:1.15rem;color:rgba(255,255,255,.5);max-width:800px;text-align:center">
+    이 발표를 듣고 나면<br>
+    <strong style="color:var(--cream)">Art Task Plan이 무엇이고, 왜 필요하며, 어떻게 진화해왔는지</strong><br>
+    그리고 <strong style="color:var(--terracotta)">지금 어디에 있고 다음에 무엇을 해야 하는지</strong> 알게 됩니다.
+  </p>
+</div>
+
+<!-- ===== 1: Art Task Plan이란? ===== -->
+<div class="slide" data-slide="1">
+  <div class="noise"></div><div class="grid-lines"></div>
+  <div class="corner-glyph" style="font-size:16rem;top:-30px;right:-20px">?</div>
+  <span class="label anim-1">정의 <span style="font-size:.72rem;opacity:.5">WHAT IS ART TASK PLAN?</span></span>
+  <h2 class="anim-2">Art Task Plan이란?</h2>
+  <div class="two-col anim-3" style="gap:48px">
+    <div>
+      <p class="kr-body" style="font-size:1.1rem;margin-bottom:20px">
+        게임의 GDD(Game Design Document)를 받아서, 그 안에 필요한 <strong style="color:var(--terracotta)">모든 아트 에셋을 AI가 생성할 수 있도록</strong> 만든 구체적인 작업 명세서
+      </p>
+      <div class="divider"></div>
+      <p class="kr-body" style="font-size:1rem;margin-bottom:16px">
+        사람 아티스트에게 주는 작업 지시서가 아니라,<br>
+        <strong style="color:var(--terracotta)">AI가 읽고 바로 에셋을 생성할 수 있는 수준</strong>의 명세서
+      </p>
+      <div style="padding:16px 20px;background:rgba(0,0,0,.04);border-radius:10px;border-left:3px solid var(--terracotta)">
+        <p class="kr-body" style="font-size:.92rem;max-width:unset">
+          <strong style="color:var(--terracotta)">핵심 문제:</strong> "수박 캐릭터를 그려줘"라고 하면 AI는 매번 다른 결과를 낸다. 어떻게 하면 <strong>항상 같은 결과</strong>를 내게 할 수 있을까?
+        </p>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--terracotta);margin-bottom:10px">ART TASK PLAN이 다루는 것</div>
+      <div class="card" style="padding:16px;margin-bottom:10px;border-left:3px solid var(--terracotta)">
+        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">에셋별 시각 명세</h3>
+        <p class="kr-body" style="font-size:.85rem">색상, 크기, 스타일, 형태를 숫자로 정의</p>
+      </div>
+      <div class="card" style="padding:16px;margin-bottom:10px;border-left:3px solid var(--sage)">
+        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">에셋 간 관계</h3>
+        <p class="kr-body" style="font-size:.85rem">캐릭터 idle → walk → jump 생성 순서와 의존성</p>
+      </div>
+      <div class="card" style="padding:16px;margin-bottom:10px;border-left:3px solid var(--lavender)">
+        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">프로젝트 일관성</h3>
+        <p class="kr-body" style="font-size:.85rem">모든 에셋이 같은 아트 스타일/색상 체계를 따름</p>
+      </div>
+      <div class="card" style="padding:16px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">실행 완결성</h3>
+        <p class="kr-body" style="font-size:.85rem">AI가 추가 질문 없이 바로 생성할 수 있는 정보 완비</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -267,7 +311,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <div class="noise"></div>
   <span class="label anim-1" style="color:rgba(255,255,255,.6)">MILESTONE 02</span>
   <h1 class="anim-2" style="margin-top:12px">Breakout</h1>
-  <p class="anim-3 kr" style="font-size:1.1rem;color:rgba(255,255,255,.6);margin-top:8px">먼저 해보고 → 문제를 찾고 → 컨셉으로 고치기</p>
+  <p class="anim-3 kr" style="font-size:1.1rem;color:rgba(255,255,255,.6);margin-top:8px">AI로 돌려보기 → 개념 누적 → KB 메타이터레이션</p>
   <div class="anim-4" style="width:48px;height:2px;background:rgba(255,255,255,.4);margin:20px auto"></div>
 </div>
 
@@ -275,34 +319,34 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 <div class="slide" data-slide="6">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">접근 방식 <span style="font-size:.72rem;opacity:.5">APPROACH</span></span>
-  <h2 class="anim-2">먼저 해보고, 문제를 찾고, 컨셉으로 고치기</h2>
-  <p class="anim-2 kr-body" style="font-size:.95rem;color:var(--warm-gray);margin-bottom:16px">AI한테 먼저 Task Plan을 만들게 해보고, 발견된 문제를 컨셉으로 하나씩 잡아나가는 방식</p>
+  <h2 class="anim-2">세 단계로 진행</h2>
   <div class="three-col anim-3" style="gap:24px">
-    <div class="card" style="border-top:3px solid #c0392b">
-      <div style="font-family:var(--font-mono);font-size:.62rem;color:#c0392b;margin-bottom:6px">STEP 1</div>
-      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">AI에게 먼저 시켜봄</h3>
-      <p class="kr-body" style="font-size:.88rem">아무 컨셉 없이 GDD만 주고 Task Plan 생성</p>
-      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 추상적, 매번 다른 결과, 정보 부족</p>
-    </div>
     <div class="card" style="border-top:3px solid var(--terracotta)">
-      <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta);margin-bottom:6px">STEP 2</div>
-      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">문제별 컨셉 추가</h3>
-      <p class="kr-body" style="font-size:.88rem">불변성 → 구조성 → 완결성 순서로 누적 적용</p>
-      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 발견된 문제에 맞는 컨셉을 추가</p>
+      <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta);margin-bottom:6px">STEP 1</div>
+      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">먼저 AI로 돌려보기</h3>
+      <p class="kr-body" style="font-size:.88rem">아무 컨셉 없이 GDD만 주고 Task Plan을 생성시켜봄</p>
+      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 추상적, 매번 다른 결과, 정보 부족 등 문제 발견</p>
     </div>
     <div class="card" style="border-top:3px solid var(--sage)">
-      <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage);margin-bottom:6px">STEP 3</div>
-      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">자동 평가 & 개선 루프</h3>
-      <p class="kr-body" style="font-size:.88rem">Evaluator로 평가 → Evolver가 프롬프트 수정</p>
-      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 재생성하며 품질 반복 개선</p>
+      <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage);margin-bottom:6px">STEP 2</div>
+      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">개념 누적으로 Task Plan 만들기</h3>
+      <p class="kr-body" style="font-size:.88rem">불변성 → 구조성 → 완결성 순서로 개념을 누적 적용하면서 품질 개선</p>
+      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 9개 버전까지 진화</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--lavender)">
+      <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lavender);margin-bottom:6px">STEP 3</div>
+      <h3 style="font-size:1.3rem;font-family:var(--font-kr)">KB를 활용한 메타이터레이션</h3>
+      <p class="kr-body" style="font-size:.88rem">이터레이션 결과를 KB에 축적하고, 다음 이터레이션의 전략 선택에 재사용</p>
+      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">→ 기반 부족으로 KB 기초부터 재학습 중</p>
     </div>
   </div>
-  <div class="anim-4" style="margin-top:20px">
-    <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--terracotta);margin-bottom:8px">SPRINT 2: 첫 실험 — 3회 연속</div>
+  <div class="anim-4" style="margin-top:24px;padding:20px 24px;background:rgba(0,0,0,.03);border-radius:12px;border:1px solid rgba(0,0,0,.06)">
+    <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:10px">전체 흐름</div>
     <div class="flow-row">
-      <div class="flow-step" style="border-color:#c0392b">Baseline (그냥 시킴)</div><span class="flow-arrow">→</span>
-      <div class="flow-step" style="border-color:var(--terracotta)">+ 불변성</div><span class="flow-arrow">→</span>
-      <div class="flow-step" style="border-color:var(--sage)">+ 구조성</div>
+      <div class="flow-step" style="border-color:var(--terracotta)">AI로 먼저 돌려봄</div><span class="flow-arrow">→</span>
+      <div class="flow-step" style="border-color:var(--sage)">개념 누적 (v2~v9)</div><span class="flow-arrow">→</span>
+      <div class="flow-step" style="border-color:var(--lavender)">파이프라인 자동화</div><span class="flow-arrow">→</span>
+      <div class="flow-step" style="border-color:var(--gold)">KB 메타이터레이션</div>
     </div>
   </div>
 </div>
@@ -390,47 +434,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
-<!-- ===== 9: Sprint 4 성공과 실패 ===== -->
-<div class="slide slide--dark" data-slide="9">
-  <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">Sprint 4 <span style="font-size:.72rem;opacity:.5">SUCCESS VS FAILURE</span></span>
-  <h2 class="anim-2" style="font-size:2.6rem">같은 스프린트, 극명한 대비</h2>
-  <div class="two-col anim-3" style="gap:48px">
-    <div>
-      <div class="lesson-card" style="border-top:3px solid var(--sage)">
-        <div style="font-family:var(--font-mono);font-size:.68rem;color:var(--sage);margin-bottom:6px">IDEATION — SUCCESS</div>
-        <h4 style="font-size:1.2rem">GDD 품질 3.26 → 4.32</h4>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.88rem">Evaluator 신뢰도 먼저 검증</li>
-          <li style="font-size:.88rem">매 실험마다 성공 기준 정의</li>
-          <li style="font-size:.88rem">Ensemble (Opus gen → GPT enhance → GPT eval)</li>
-          <li style="font-size:.88rem">프롬프트 개선 대비 <strong style="color:var(--cream)">4.1배 효과</strong></li>
-        </ul>
-        <div class="quote-block" style="font-size:.88rem;margin-top:12px;color:var(--gold)">"평가 모델 효과(0.926)가 생성 모델 효과(0.479)의 2배"</div>
-      </div>
-    </div>
-    <div>
-      <div class="lesson-card" style="border-top:3px solid #c0392b">
-        <div style="font-family:var(--font-mono);font-size:.68rem;color:#c0392b;margin-bottom:6px">PLANNING — FAILURE</div>
-        <h4 style="font-size:1.2rem">8일간 AI 자기참조 루프</h4>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.88rem;color:#c0392b">87개 spec, 46개 acceptance case</li>
-          <li style="font-size:.88rem;color:#c0392b">사람 게임 개발자 검증: 0회</li>
-          <li style="font-size:.88rem;color:#c0392b">103개 GDD 폴더 (같은 입력 반복)</li>
-          <li style="font-size:.88rem;color:#c0392b">45+ 미해결 경고</li>
-        </ul>
-        <div class="quote-block" style="font-size:.88rem;margin-top:12px;border-color:#c0392b;color:#e74c3c">"제품보다 거버넌스, 품질보다 규모를 최적화"</div>
-      </div>
-    </div>
-  </div>
-  <div class="anim-4" style="margin-top:16px;padding:16px 20px;background:rgba(192,57,43,.1);border-radius:10px;border-left:3px solid var(--terracotta)">
-    <p class="kr-body" style="font-size:.95rem;color:var(--cream);max-width:unset">
-      <strong style="color:var(--terracotta)">핵심 교훈:</strong> "잘못된 것을 최적화하지 마라" — Clean Slate 재시작. 9+22 에이전트 → <strong>3+1</strong>, 87개 spec → <strong>2개 핵심 스키마</strong>
-    </p>
-  </div>
-</div>
-
-<!-- ===== 10: 메타 이터레이션 & KB ===== -->
+<!-- ===== 9: 메타 이터레이션 & KB ===== -->
 <div class="slide" data-slide="10">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">메타 이터레이션 & KB <span style="font-size:.72rem;opacity:.5">META ITERATION & KNOWLEDGE BASE</span></span>
