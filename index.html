@@ -100,70 +100,43 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </p>
 </div>
 
-<!-- 1: 정의 -->
+<!-- 1: KB란? + 문서 vs KB -->
 <div class="slide" data-slide="1">
   <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">01 — 개념과 정의 <span style="font-size:.72rem;opacity:.5">DEFINITION</span></span>
-  <h2 class="anim-2">KB란 무엇인가?</h2>
-  <p class="anim-2 kr-body" style="font-size:1rem;color:var(--warm-gray);margin-bottom:16px">관계, 상태, 이력을 구조적으로 저장해서 다음 실행에서 다시 쓰기 위한 <strong style="color:var(--ink)">지식 레이어</strong></p>
+  <span class="label anim-1">01 — KB란? <span style="font-size:.72rem;opacity:.5">WHAT IS KB?</span></span>
+  <h2 class="anim-2">관계·상태·이력을 구조적으로 저장하는 지식 레이어</h2>
+  <p class="anim-2 kr-body" style="font-size:.92rem;color:var(--warm-gray);margin-bottom:12px">현재 KB는 document retrieval이 아닌 <strong style="color:var(--ink)">graph/fact-memory</strong> 형태 — 사실을 entity/relation으로 쪼개서 저장하고 연결</p>
   <div class="two-col anim-3" style="gap:48px">
     <div>
-      <div class="card" style="border-top:3px solid var(--sage)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">DOCUMENT RETRIEVAL KB</div>
-        <h3 style="font-size:1.4rem;font-family:var(--font-kr)">문서 기반</h3>
-        <p class="kr-body" style="font-size:.92rem">문서를 통째로 저장 → 비슷한 문서를 찾아오는 방식</p>
-        <ul class="feature-list" style="margin-top:10px">
-          <li style="font-size:.92rem">사람이 읽기 자연스러움</li>
-          <li style="font-size:.92rem">원문 보관에 적합</li>
-          <li style="font-size:.92rem">설계 비용 낮음</li>
+      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:14px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:6px">문서가 맞는 경우</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem">사람이 읽고 이해해야 하는 설명</li>
+          <li style="font-size:.88rem">배경 맥락, 최종 정리, 보고서</li>
+          <li style="font-size:.88rem">원문 보관/공유가 주목적</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:6px">KB가 맞는 경우</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem">실행에 필요한 구조화 정보</li>
+          <li style="font-size:.88rem">Version 관계, 교훈, 성과</li>
+          <li style="font-size:.88rem">다음 실행에서 재사용할 연결 정보</li>
         </ul>
       </div>
     </div>
     <div>
-      <div class="card" style="border-top:3px solid var(--accent)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">GRAPH / FACT-MEMORY KB</div>
-        <h3 style="font-size:1.4rem;font-family:var(--font-kr)">현재 KB 방식</h3>
-        <p class="kr-body" style="font-size:.92rem">사실(fact)을 entity/relation으로 쪼개서 저장하고 연결</p>
-        <ul class="feature-list" style="margin-top:10px">
-          <li style="font-size:.92rem">구조적 재사용에 강함</li>
-          <li style="font-size:.92rem">관계 추적 가능</li>
-          <li style="font-size:.92rem">다음 실행 판단에 활용</li>
-        </ul>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">GRAPH KB의 특징</div>
+      <ul class="feature-list">
+        <li style="font-size:.92rem">사실(fact)을 <strong style="color:var(--ink)">엔티티</strong>로 저장</li>
+        <li style="font-size:.92rem">엔티티 간 연결을 <strong style="color:var(--ink)">릴레이션</strong>으로 표현</li>
+        <li style="font-size:.92rem">의미 기반 <strong style="color:var(--ink)">검색(retrieve)</strong>으로 관련 정보 찾기</li>
+        <li style="font-size:.92rem">연결을 따라가며 <strong style="color:var(--ink)">문맥 확장(hop)</strong></li>
+      </ul>
+      <div class="callout" style="margin-top:12px">
+        <strong>핵심:</strong> 사람이 읽을 것은 <strong>문서</strong>에, 시스템이 다시 찾아 써야 하는 것은 <strong>KB</strong>에 둔다.
       </div>
     </div>
-  </div>
-  <div class="callout anim-4">
-    <strong>핵심 구분:</strong> 사람이 읽을 것은 <strong>문서</strong>에 두고, 시스템이 다시 찾아 써야 하는 것은 <strong>KB</strong>에 둔다.
-  </div>
-</div>
-
-<!-- 2: 권장 구조 -->
-<div class="slide slide--dark" data-slide="2">
-  <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">02 — 권장 구조 <span style="font-size:.72rem;opacity:.5">RECOMMENDED STRUCTURE</span></span>
-  <h2 class="anim-2">문서 레이어 + KB 레이어</h2>
-  <div class="two-col anim-3" style="gap:48px">
-    <div class="card" style="border-left:3px solid var(--sage)">
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">문서 / WIKI 레이어</div>
-      <ul class="feature-list">
-        <li style="font-size:.95rem">사람이 읽는 설명</li>
-        <li style="font-size:.95rem">배경 맥락</li>
-        <li style="font-size:.95rem">최종 정리 / 보고서</li>
-        <li style="font-size:.95rem">Raw document, note, evidence</li>
-      </ul>
-    </div>
-    <div class="card" style="border-left:3px solid var(--accent)">
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">KB 레이어</div>
-      <ul class="feature-list">
-        <li style="font-size:.95rem">실행에 필요한 구조화 정보</li>
-        <li style="font-size:.95rem">Version 관계</li>
-        <li style="font-size:.95rem">교훈, 성과</li>
-        <li style="font-size:.95rem">다음 실행에서 재사용할 연결 정보</li>
-      </ul>
-    </div>
-  </div>
-  <div class="quote-block anim-4" style="color:var(--gold)">
-    "KB가 문서를 대체하는 것이 아니다. 원문이 목적이면 문서, 다음 실행 판단에 쓸 기억이 목적이면 KB."
   </div>
 </div>
 
