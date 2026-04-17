@@ -402,47 +402,59 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
-<!-- ===== 8: Breakout — 파이프라인 ===== -->
+<!-- ===== 8: Breakout — 파이프라인 & 에이전트 ===== -->
 <div class="slide" data-slide="8">
   <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">파이프라인 <span style="font-size:.72rem;opacity:.5">PIPELINE & CONCEPTS</span></span>
+  <span class="label anim-1">파이프라인 & 에이전트 <span style="font-size:.72rem;opacity:.5">PIPELINE & 15 AGENTS</span></span>
   <h2 class="anim-2" style="font-size:2.6rem">자동화된 이터레이션 파이프라인</h2>
-  <p class="anim-2 kr-body" style="font-size:.88rem;color:var(--warm-gray);margin-bottom:12px">Iteration 7까지 전 과정 자동 실행 완료 (5개 게임 × 5 trials)</p>
-  <div class="anim-3">
-    <div class="flow-row">
-      <div class="flow-step" style="border-color:var(--terracotta)">Designer</div><span class="flow-arrow">→</span>
-      <div class="flow-step">Analyzer</div><span class="flow-arrow">→</span>
-      <div class="flow-step" style="border-color:var(--gold)">Generator</div><span class="flow-arrow">→</span>
-      <div class="flow-step" style="border-color:var(--sage)">Evaluator</div><span class="flow-arrow">→</span>
-      <div class="flow-step" style="border-color:#c0392b">Evolver</div><span class="flow-arrow">→</span>
-      <div class="flow-step">Process Validator</div>
-    </div>
-  </div>
-  <div class="two-col anim-4" style="gap:48px;margin-top:12px">
+  <p class="anim-2 kr-body" style="font-size:.88rem;color:var(--warm-gray);margin-bottom:10px">총 15개 에이전트가 역할별로 나뉘어 파이프라인을 구성</p>
+  <div class="two-col anim-3" style="gap:40px">
     <div>
-      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--terracotta);margin-bottom:10px">3-LAYER 구조 (SPRINT 6)</div>
-      <table>
-        <thead><tr><th>Layer</th><th>역할</th><th>성격</th></tr></thead>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">메인 파이프라인 (이터레이션 1사이클)</div>
+      <div class="flow-row" style="margin-bottom:12px">
+        <div class="flow-step" style="font-size:.82rem;border-color:var(--terracotta)">Designer</div><span class="flow-arrow">→</span>
+        <div class="flow-step" style="font-size:.82rem">Analyzer</div><span class="flow-arrow">→</span>
+        <div class="flow-step" style="font-size:.82rem;border-color:var(--gold)">Generator</div><span class="flow-arrow">→</span>
+        <div class="flow-step" style="font-size:.82rem;border-color:var(--sage)">Evaluator</div><span class="flow-arrow">→</span>
+        <div class="flow-step" style="font-size:.82rem;border-color:#c0392b">Evolver</div>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">전체 에이전트 구성 (15개)</div>
+      <table style="font-size:.82rem">
+        <thead><tr><th>그룹</th><th>에이전트</th></tr></thead>
         <tbody>
-          <tr><td><strong style="color:var(--sage)">Layer 1</strong></td><td style="font-family:var(--font-kr)">Goal Spec — 좋은 Art Task Plan의 기준 정의</td><td>고정</td></tr>
-          <tr><td><strong style="color:var(--terracotta)">Layer 2</strong></td><td style="font-family:var(--font-kr)">개념(Concept) — Task Plan을 만드는 지침<br><span style="font-size:.75rem;color:var(--warm-gray)">불변성, 구조성, 완결성 등 누적된 개념들</span></td><td>지속 개선</td></tr>
-          <tr><td><strong style="color:var(--lavender)">Layer 3</strong></td><td style="font-family:var(--font-kr)">Iteration Loop 운영 + KB 통합</td><td>미래 목표</td></tr>
+          <tr><td style="font-size:.72rem;font-family:var(--font-mono);color:var(--terracotta)">실행</td><td style="font-family:var(--font-kr);font-size:.78rem">Orchestrator, Designer, Analyzer, Generator, Evaluator, Process Validator</td></tr>
+          <tr><td style="font-size:.72rem;font-family:var(--font-mono);color:#c0392b">진화</td><td style="font-family:var(--font-kr);font-size:.78rem">Agent Evolver, Evolver Reviewer</td></tr>
+          <tr><td style="font-size:.72rem;font-family:var(--font-mono);color:var(--lavender)">KB</td><td style="font-family:var(--font-kr);font-size:.78rem">KB Manager, Meta KB Manager, KB Writer, Meta KB Writer, KB Retriever</td></tr>
+          <tr><td style="font-size:.72rem;font-family:var(--font-mono);color:var(--warm-gray)">운영</td><td style="font-family:var(--font-kr);font-size:.78rem">Monitor</td></tr>
         </tbody>
       </table>
     </div>
     <div>
-      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--sage);margin-bottom:10px">KEY AGENTS</div>
-      <div class="card" style="padding:16px;margin-bottom:10px;border-left:3px solid var(--terracotta)">
-        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">Generator</h3>
-        <p class="kr-body" style="font-size:.85rem">Goal Spec + 개념(Concept) + GDD → Task Plan 생성</p>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">3-LAYER 구조</div>
+      <table style="font-size:.82rem">
+        <thead><tr><th>Layer</th><th>역할</th><th>성격</th></tr></thead>
+        <tbody>
+          <tr><td><strong style="color:var(--sage)">1</strong></td><td style="font-family:var(--font-kr);font-size:.82rem">Goal Spec — 좋은 Task Plan의 기준</td><td>고정</td></tr>
+          <tr><td><strong style="color:var(--terracotta)">2</strong></td><td style="font-family:var(--font-kr);font-size:.82rem">개념(Concept) — Task Plan 만드는 지침<br><span style="font-size:.7rem;color:var(--warm-gray)">불변성, 구조성, 완결성 등 누적</span></td><td>개선</td></tr>
+          <tr><td><strong style="color:var(--lavender)">3</strong></td><td style="font-family:var(--font-kr);font-size:.82rem">KB 기반 이터레이션 루프 운영</td><td>목표</td></tr>
+        </tbody>
+      </table>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin:12px 0 8px">핵심 역할 요약</div>
+      <div class="card" style="padding:12px 14px;margin-bottom:8px;border-left:3px solid var(--gold)">
+        <h3 style="font-size:.95rem;font-family:var(--font-kr)">Generator</h3>
+        <p class="kr-body" style="font-size:.78rem">Goal Spec + 개념 + GDD → Task Plan 생성</p>
       </div>
-      <div class="card" style="padding:16px;margin-bottom:10px;border-left:3px solid var(--sage)">
-        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">Evaluator</h3>
-        <p class="kr-body" style="font-size:.85rem">Goal Spec 기준으로 품질 검증 (5게임 × 5 trials)</p>
+      <div class="card" style="padding:12px 14px;margin-bottom:8px;border-left:3px solid var(--sage)">
+        <h3 style="font-size:.95rem;font-family:var(--font-kr)">Evaluator</h3>
+        <p class="kr-body" style="font-size:.78rem">Goal Spec 기준 품질 검증 (5게임 × 5 trials)</p>
       </div>
-      <div class="card" style="padding:16px;border-left:3px solid #c0392b">
-        <h3 style="font-size:1.1rem;font-family:var(--font-kr)">Evolver</h3>
-        <p class="kr-body" style="font-size:.85rem">실패 분석 → 프롬프트 자동 수정 (Closed Loop)</p>
+      <div class="card" style="padding:12px 14px;margin-bottom:8px;border-left:3px solid #c0392b">
+        <h3 style="font-size:.95rem;font-family:var(--font-kr)">Evolver</h3>
+        <p class="kr-body" style="font-size:.78rem">실패 분석 → 프롬프트 자동 수정 (Closed Loop)</p>
+      </div>
+      <div class="card" style="padding:12px 14px;border-left:3px solid var(--lavender)">
+        <h3 style="font-size:.95rem;font-family:var(--font-kr)">KB Retriever / Writer</h3>
+        <p class="kr-body" style="font-size:.78rem">과거 이터레이션 결과를 KB에서 검색/저장</p>
       </div>
     </div>
   </div>
@@ -451,39 +463,40 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 <!-- ===== 9: KB로 메타이터레이션 ===== -->
 <div class="slide" data-slide="10">
   <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">KB 메타이터레이션 <span style="font-size:.72rem;opacity:.5">WHY KB FOR META ITERATION?</span></span>
-  <h2 class="anim-2" style="font-size:2.6rem">KB로 하려던 것: 다음 전략을 과거로부터 고르기</h2>
-  <p class="anim-2 kr-body" style="font-size:.95rem;color:var(--warm-gray);margin-bottom:16px">이터레이션을 돌릴 때마다 결과가 쌓이는데, 그 결과를 <strong style="color:var(--ink)">구조적으로 기억</strong>시켜서 다음 이터레이션의 전략을 자동으로 선택하게 하고 싶었다</p>
-  <div class="two-col anim-3" style="gap:48px">
+  <span class="label anim-1">KB 메타이터레이션 <span style="font-size:.72rem;opacity:.5">KB-DRIVEN META ITERATION</span></span>
+  <h2 class="anim-2" style="font-size:2.4rem">KB = 반복 실행 사이의 구조적 기억</h2>
+  <p class="anim-2 kr-body" style="font-size:.92rem;color:var(--warm-gray);margin-bottom:12px">KB는 문서 저장소가 아니라, <strong style="color:var(--ink)">관계·상태·이력을 엔티티/릴레이션으로 저장</strong>해서 다음 실행의 의사결정에 쓰는 지식 레이어</p>
+  <div class="two-col anim-3" style="gap:40px">
     <div>
-      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--terracotta);margin-bottom:10px">KB에 기대한 역할</div>
-      <div class="card" style="padding:18px;margin-bottom:12px;border-left:3px solid var(--terracotta)">
-        <h3 style="font-size:1.05rem;font-family:var(--font-kr)">과거 이터레이션 기억</h3>
-        <p class="kr-body" style="font-size:.88rem">iter_007의 점수, 실패 패턴, 적용했던 개념, 전략 변경 이력을 엔티티/릴레이션으로 축적</p>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--terracotta);margin-bottom:8px">KB에 저장하려던 것</div>
+      <div class="card" style="padding:14px;margin-bottom:8px;border-left:3px solid var(--terracotta)">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--terracotta)">엔티티 (ENTITY)</div>
+        <p class="kr-body" style="font-size:.82rem;margin-top:4px">TaskPlanVersion, EvalReport, IterationIncident 등을 각각 독립 엔티티로 저장<br><span style="color:var(--warm-gray);font-size:.75rem">entity_id, label, summary, properties 필드</span></p>
       </div>
-      <div class="card" style="padding:18px;margin-bottom:12px;border-left:3px solid var(--sage)">
-        <h3 style="font-size:1.05rem;font-family:var(--font-kr)">다음 전략 자동 선택</h3>
-        <p class="kr-body" style="font-size:.88rem">축적된 패턴을 retrieve해서 "이번엔 어떤 프롬프트/개념/검증 기준으로 돌릴지" AI가 스스로 결정</p>
+      <div class="card" style="padding:14px;margin-bottom:8px;border-left:3px solid var(--sage)">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage)">릴레이션 (RELATION)</div>
+        <p class="kr-body" style="font-size:.82rem;margin-top:4px">엔티티 간 방향성 있는 연결을 predicate로 구분<br><span style="color:var(--warm-gray);font-size:.75rem">supersedes (대체), evaluated_by (평가), caused_by (원인)</span></p>
       </div>
-      <div class="card" style="padding:18px;border-left:3px solid var(--lavender)">
-        <h3 style="font-size:1.05rem;font-family:var(--font-kr)">개념(Concept) 자동 진화</h3>
-        <p class="kr-body" style="font-size:.88rem">"불변성만으로 부족했다" → "구조성을 추가하자"를 AI가 KB에서 근거를 찾아 판단</p>
+      <div class="card" style="padding:14px;border-left:3px solid var(--lavender)">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lavender)">검색 (RETRIEVE)</div>
+        <p class="kr-body" style="font-size:.82rem;margin-top:4px">retrieve_kb_graph로 의미 기반 검색<br><span style="color:var(--warm-gray);font-size:.75rem">embedding → top-k 후보 선별 → hop expansion으로 주변 관계까지 펼침</span></p>
       </div>
     </div>
     <div>
-      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--gold);margin-bottom:10px">기대했던 흐름</div>
-      <div class="flow-row" style="flex-direction:column;align-items:stretch;gap:6px">
-        <div class="flow-step" style="text-align:center;border-color:var(--terracotta)">이터레이션 실행 → 결과/점수/실패 패턴 발생</div>
-        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray)">↓</div>
-        <div class="flow-step" style="text-align:center;border-color:var(--sage)">KB에 구조적으로 저장 (엔티티 + 릴레이션)</div>
-        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray)">↓</div>
-        <div class="flow-step" style="text-align:center;border-color:var(--lavender)">다음 이터레이션 시 KB에서 retrieve</div>
-        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray)">↓</div>
-        <div class="flow-step" style="text-align:center;border-color:var(--gold)">전략 자동 선택 → 더 나은 Task Plan 생성</div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:8px">기대했던 메타이터레이션 흐름</div>
+      <div class="flow-row" style="flex-direction:column;align-items:stretch;gap:4px;margin-bottom:12px">
+        <div class="flow-step" style="text-align:center;font-size:.82rem;border-color:var(--terracotta)">이터레이션 실행 → 결과/점수/실패 패턴</div>
+        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray);font-size:.9rem">↓</div>
+        <div class="flow-step" style="text-align:center;font-size:.82rem;border-color:var(--sage)">KB에 엔티티로 저장 + 릴레이션으로 연결<br><span style="font-size:.72rem;color:var(--warm-gray)">예: v3 --supersedes→ v2, v3 --evaluated_by→ eval_report_003</span></div>
+        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray);font-size:.9rem">↓</div>
+        <div class="flow-step" style="text-align:center;font-size:.82rem;border-color:var(--lavender)">다음 이터레이션 시 retrieve_kb_graph로 검색<br><span style="font-size:.72rem;color:var(--warm-gray)">"최근 실패 패턴" 쿼리 → top-k 매칭 → hop으로 관련 전략까지</span></div>
+        <div style="text-align:center;font-family:var(--font-mono);color:var(--warm-gray);font-size:.9rem">↓</div>
+        <div class="flow-step" style="text-align:center;font-size:.82rem;border-color:var(--gold)">검색 결과를 근거로 다음 전략 자동 선택</div>
       </div>
-      <div style="margin-top:12px;padding:14px 18px;background:rgba(192,57,43,.06);border-radius:10px;border-left:3px solid #c0392b">
-        <p class="kr-body" style="font-size:.88rem;max-width:unset">
-          <strong style="color:#c0392b">현실:</strong> KB의 retrieve, 엔티티, 릴레이션을 제대로 이해하지 못한 채 설계하려다 깨짐. 지금 KB 기초부터 다시 습득 중.
+      <div style="padding:12px 16px;background:rgba(192,57,43,.06);border-radius:10px;border-left:3px solid #c0392b">
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:#c0392b;margin-bottom:4px">왜 멈췄나</div>
+        <p class="kr-body" style="font-size:.82rem;max-width:unset">
+          retrieve가 어떻게 동작하는지, top-k와 hops가 뭔지, 엔티티/릴레이션 역할이 뭔지 — 이 기초 4가지를 모르고 설계하려다 깨짐. 지금 KB 기초부터 다시 습득 중.
         </p>
       </div>
     </div>
