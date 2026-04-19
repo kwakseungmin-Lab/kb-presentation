@@ -140,6 +140,58 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
+<!-- 2: 최소 기준 (NEW) -->
+<div class="slide slide--dark" data-slide="2">
+  <div class="noise"></div><div class="grid-lines"></div>
+  <div class="corner-glyph" style="font-size:18rem;top:-30px;right:-20px;color:rgba(255,255,255,.02)">4</div>
+  <span class="label anim-1">02 — 최소 기준 <span style="font-size:.72rem;opacity:.5">PREREQUISITES</span></span>
+  <h2 class="anim-2">설계 전에 반드시 말할 수 있어야 하는 4가지</h2>
+  <p class="anim-2" style="font-size:.88rem;color:rgba(255,255,255,.4);margin-bottom:16px">이거 하나라도 막히면 아직 설계 단계가 아님</p>
+  <div class="two-col anim-3" style="gap:48px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:4px">1</div>
+        <p class="kr-body" style="font-size:.92rem">retrieve가 <strong style="color:var(--cream)">어떻게 동작</strong>하는지 — 임베딩으로 뭐 찾고, 릴레이션을 어떻게 따라가는지</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--sage)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">2</div>
+        <p class="kr-body" style="font-size:.92rem"><strong style="color:var(--cream)">top-k / hops 차이</strong> — 각각 뭘 컨트롤하는지</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--gold)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:4px">3</div>
+        <p class="kr-body" style="font-size:.92rem"><strong style="color:var(--cream)">엔티티 / 릴레이션 역할</strong> — 뭐 저장되고, 언제 쓰이는지</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--lavender)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:4px">4</div>
+        <p class="kr-body" style="font-size:.92rem"><strong style="color:var(--cream)">"왜 KB 쓰는지"</strong> — 내 문제에서 필요한 이유</p>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-bottom:12px">실습 권장 3단계</div>
+      <div class="card" style="border-left:3px solid var(--accent);margin-bottom:12px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:4px">STEP 1 — 실제로 넣어보기</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem">문서 하나 넣기</li>
+          <li style="font-size:.88rem">엔티티 어떻게 생기는지 보기</li>
+          <li style="font-size:.88rem">릴레이션 어떻게 연결되는지 보기</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:12px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">STEP 2 — 실제로 검색해보기</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem">같은 질문으로 top-k 바꿔보기 (1, 5, 10)</li>
+          <li style="font-size:.88rem">hops 바꿔보기 (0, 1, 2)</li>
+          <li style="font-size:.88rem">결과가 어떻게 달라지는지 보기</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid var(--gold)">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:4px">STEP 3 — "내 예상 vs 실제" 비교</div>
+        <p class="kr-body" style="font-size:.88rem">"이렇게 나올 줄 알았는데 왜 다르지?" → 여기서 학습이 생김</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- 3: 엔티티 -->
 <div class="slide" data-slide="3">
   <div class="noise"></div><div class="grid-lines"></div>
@@ -164,7 +216,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
       </div>
     </div>
     <div>
-      <table>
+      <table style="margin-bottom:16px">
         <thead><tr><th>필드</th><th>역할</th><th>필수</th></tr></thead>
         <tbody>
           <tr><td><code style="color:var(--accent)">entity_id</code></td><td style="font-family:var(--font-kr)">시스템에서 정확히 식별하는 ID</td><td>O</td></tr>
@@ -173,6 +225,9 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
           <tr><td><code style="color:var(--accent)">properties</code></td><td style="font-family:var(--font-kr)">부가 메타데이터 (엔티티별로 다름)</td><td></td></tr>
         </tbody>
       </table>
+      <div class="callout" style="font-size:.85rem">
+        <strong>properties 필드:</strong> 이름은 공통이지만 안의 내용은 엔티티마다 다를 수 있고, 아예 비어 있을 수도 있다.
+      </div>
     </div>
   </div>
 </div>
@@ -185,23 +240,95 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <p class="anim-2" style="font-size:.88rem;color:rgba(255,255,255,.4);margin-bottom:12px">두 엔티티 사이의 방향성 있는 의미 연결</p>
   <div class="two-col anim-3" style="gap:48px">
     <div>
-      <div class="code-block" style="font-size:.85rem">
+      <div class="code-block" style="font-size:.82rem">
         {<br>
         &nbsp;&nbsp;<span class="k">relation_id</span>: <span class="v">"rel_001"</span>,<br>
         &nbsp;&nbsp;<span class="k">source_entity_id</span>: <span class="v">"azle_tool_retrieve_kb_graph"</span>,<br>
         &nbsp;&nbsp;<span class="k">target_entity_id</span>: <span class="v">"azle_knowledge_base_module"</span>,<br>
-        &nbsp;&nbsp;<span class="k">predicate</span>: <span class="v">"retrieves_from_module"</span><br>
+        &nbsp;&nbsp;<span class="k">predicate</span>: <span class="v">"retrieves_from_module"</span>,<br>
+        &nbsp;&nbsp;<span class="k">description</span>: <span class="v">"retrieve_kb_graph가 KB 모듈에서 retrieval 수행"</span>,<br>
+        &nbsp;&nbsp;<span class="k">properties</span>: { ... },<br>
+        &nbsp;&nbsp;<span class="k">updated_at</span>: <span class="v">"2026-04-15T..."</span><br>
         }
       </div>
-      <div style="margin-top:16px;padding:14px 18px;background:rgba(192,57,43,.08);border-radius:10px;border-left:3px solid #c0392b">
+      <div style="margin-top:12px;padding:14px 18px;background:rgba(192,57,43,.08);border-radius:10px;border-left:3px solid #c0392b">
         <p class="kr-body" style="font-size:.88rem;color:var(--cream);max-width:unset">
-          <strong style="color:#e74c3c">물리 엣지 타입은 하나:</strong> <code>KB_RELATES</code> — 의미 구분은 <code>predicate</code>에. 방향 항상 고정!
+          <strong style="color:#e74c3c">물리 엣지 타입은 하나:</strong> <code>KB_RELATES</code> — 의미 구분은 <code>predicate</code>에 둔다
+        </p>
+      </div>
+      <div style="margin-top:10px;padding:14px 18px;background:rgba(255,255,255,.05);border-radius:10px;border-left:3px solid var(--sage)">
+        <p class="kr-body" style="font-size:.85rem;color:var(--cream);max-width:unset">
+          <strong style="color:var(--sage)">Outgoing / Incoming</strong> = 엔티티 관점에서 본 릴레이션 방향<br>
+          <span style="font-size:.82rem;color:var(--warm-gray)">A → <code>uses_tool</code> → B 일 때: A의 Outgoing +1, B의 Incoming +1</span>
         </p>
       </div>
     </div>
     <div>
-      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-bottom:10px">PREDICATE 예시</div>
-      <table>
+      <div style="font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-bottom:8px">릴레이션 필드 구조</div>
+      <table style="margin-bottom:14px">
+        <thead><tr><th>필드</th><th>역할</th><th>필수</th></tr></thead>
+        <tbody>
+          <tr><td><code style="color:var(--accent)">relation_id</code></td><td>릴레이션 고유 식별자</td><td>O</td></tr>
+          <tr><td><code style="color:var(--accent)">source_entity_id</code></td><td>출발 엔티티 (이 엔티티 기준 Outgoing)</td><td>O</td></tr>
+          <tr><td><code style="color:var(--accent)">target_entity_id</code></td><td>도착 엔티티 (이 엔티티 기준 Incoming)</td><td>O</td></tr>
+          <tr><td><code style="color:var(--accent)">predicate</code></td><td>관계의 의미 (uses_tool, supersedes 등)</td><td>O</td></tr>
+          <tr><td><code style="color:var(--accent)">description</code></td><td>사람이 읽는 짧은 설명</td><td></td></tr>
+          <tr><td><code style="color:var(--accent)">properties</code></td><td>부가 메타데이터 (JSON)</td><td></td></tr>
+          <tr><td><code style="color:var(--accent)">updated_at</code></td><td>마지막 수정 시각</td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="font-size:.85rem">
+        <strong>구조 요약:</strong> source → <strong>predicate</strong> → target 방향의 의미 연결. predicate가 관계의 본질, description/properties는 보조.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5: 릴레이션 설계 원칙 (NEW) -->
+<div class="slide" data-slide="5">
+  <div class="noise"></div><div class="grid-lines"></div>
+  <span class="label anim-1">04-B — 릴레이션 설계 원칙 <span style="font-size:.72rem;opacity:.5">RELATION DESIGN</span></span>
+  <h2 class="anim-2" style="margin-bottom:.3em">왜 릴레이션이 중요한가 + 설계 원칙</h2>
+  <div class="two-col anim-3" style="gap:48px">
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">릴레이션이 중요한 4가지 이유</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+        <div class="card" style="border-left:3px solid var(--accent);padding:12px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--ink)">맥락 추적</strong></p>
+          <p class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">관련된 것들을 함께 볼 수 있음</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--sage);padding:12px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--ink)">hop expansion</strong></p>
+          <p class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">주변 그래프를 단계적으로 펼침</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--gold);padding:12px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--ink)">설명 가능한 구조</strong></p>
+          <p class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">관계를 통해 결과 추적 가능</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--lavender);padding:12px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--ink)">태그보다 선명</strong></p>
+          <p class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">방향 + predicate로 정확한 표현</p>
+        </div>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">설계 원칙 4가지</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div class="card" style="padding:10px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--accent)">1.</strong> predicate는 <strong style="color:var(--ink)">일관된 어휘</strong> — 같은 관계에 다른 단어 쓰면 검색이 깨짐</p>
+        </div>
+        <div class="card" style="padding:10px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--accent)">2.</strong> <strong style="color:var(--ink)">방향 항상 고정</strong> — tool → api (반대로도 쓰면 혼란)</p>
+        </div>
+        <div class="card" style="padding:10px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--accent)">3.</strong> <strong style="color:var(--ink)">description에 짧은 설명</strong> — predicate만으로 부족한 맥락 보완</p>
+        </div>
+        <div class="card" style="padding:10px 16px">
+          <p class="kr-body" style="font-size:.88rem"><strong style="color:var(--accent)">4.</strong> 관계의 본질은 <strong style="color:var(--ink)">predicate에</strong>, 부가 정보만 properties에</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">PREDICATE 예시</div>
+      <table style="margin-bottom:12px">
         <thead><tr><th>Predicate</th><th>의미</th></tr></thead>
         <tbody>
           <tr><td><code style="color:var(--accent)">refers_to</code></td><td>이 entity가 저 entity를 참고</td></tr>
@@ -209,17 +336,20 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
           <tr><td><code style="color:var(--accent)">evaluated_by</code></td><td>이 Task Plan이 이 평가를 받음</td></tr>
           <tr><td><code style="color:var(--accent)">caused_by</code></td><td>이 실패가 이 원인으로 발생</td></tr>
           <tr><td><code style="color:var(--accent)">uses_tool</code></td><td>이 entity가 저 tool을 사용</td></tr>
+          <tr><td><code style="color:var(--accent)">documented_in</code></td><td>이 entity의 문서가 저기에 있음</td></tr>
+          <tr><td><code style="color:var(--accent)">complements_reference</code></td><td>이 entity가 저 레퍼런스를 보완</td></tr>
+          <tr><td><code style="color:var(--accent)">retrieves_from_module</code></td><td>이 entity가 저 모듈에서 데이터 가져옴</td></tr>
         </tbody>
       </table>
-      <div class="quote-block" style="margin-top:12px;font-size:.95rem;color:var(--gold)">
+      <div class="quote-block" style="font-size:.88rem;color:var(--accent)">
         "KB가 검색 인덱스가 아니라 구조적 기억이 되게 만드는 핵심이 릴레이션"
       </div>
     </div>
   </div>
 </div>
 
-<!-- 5: 섹션 — 검색 vs 조회 -->
-<div class="slide slide--accent" data-slide="5">
+<!-- 6: 섹션 — 검색 vs 조회 -->
+<div class="slide slide--accent" data-slide="6">
   <div class="noise"></div>
   <span class="label anim-1" style="color:rgba(255,255,255,.6)">SECTION</span>
   <h1 class="anim-2" style="margin-top:12px">검색 vs 조회</h1>
@@ -227,52 +357,57 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <div class="anim-4" style="width:48px;height:2px;background:rgba(255,255,255,.4);margin:20px auto"></div>
 </div>
 
-<!-- 6: 검색 vs 조회 -->
-<div class="slide" data-slide="6">
+<!-- 7: 검색 방식 3가지 (RESTRUCTURED) -->
+<div class="slide" data-slide="7">
   <div class="noise"></div><div class="grid-lines"></div>
-  <span class="label anim-1">05 — 검색 vs 조회 <span style="font-size:.72rem;opacity:.5">RETRIEVAL VS READ</span></span>
-  <h2 class="anim-2">검색과 조회는 다르다</h2>
-  <div class="two-col anim-3" style="gap:48px">
-    <div>
-      <div class="card" style="border-top:3px solid var(--accent)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">검색 (RETRIEVAL)</div>
-        <h3 style="font-size:1.4rem;font-family:var(--font-kr)">retrieve_kb_graph</h3>
-        <p class="kr-body" style="font-size:.88rem">의미 기반 semantic retrieval</p>
-        <ul class="feature-list" style="margin-top:10px">
-          <li style="font-size:.88rem">embedding 기반 유사도 검색</li>
-          <li style="font-size:.88rem">top-k ranking으로 후보 선별</li>
-          <li style="font-size:.88rem">hop expansion으로 그래프 펼침</li>
-          <li style="font-size:.88rem">query → 관련 대상을 <strong>찾아냄</strong></li>
-        </ul>
-        <div class="callout" style="margin-top:8px;font-size:.85rem">exact entity_id lookup이 <strong>보장되지 않음</strong></div>
-      </div>
+  <span class="label anim-1">05 — 검색과 조회 <span style="font-size:.72rem;opacity:.5">RETRIEVAL VS READ</span></span>
+  <h2 class="anim-2">검색 2가지 + 조회 4가지</h2>
+  <div class="three-col anim-3" style="gap:28px">
+    <div class="card" style="border-top:3px solid var(--gold)">
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:8px">검색 1: EXACT / METADATA LOOKUP</div>
+      <p class="kr-body" style="font-size:.88rem"><strong>정확한 ID나 key</strong>를 이미 알고 있을 때</p>
+      <ul class="feature-list" style="margin-top:10px">
+        <li style="font-size:.85rem">특정 entity_id로 직접 조회</li>
+        <li style="font-size:.85rem">active/current pointer 확인</li>
+        <li style="font-size:.85rem">의미 유사도 검색이 <strong>아님</strong></li>
+        <li style="font-size:.85rem">"비슷한 것"이 아니라 <strong>정확히</strong> 찾는 것</li>
+      </ul>
+      <div class="callout" style="font-size:.82rem;margin-top:8px">현재 active/current 상태 확인에 적합</div>
     </div>
-    <div>
-      <div class="card" style="border-top:3px solid var(--sage)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">조회 (READ / LOOKUP)</div>
-        <h3 style="font-size:1.4rem;font-family:var(--font-kr)">4가지 방식</h3>
-        <p class="kr-body" style="font-size:.88rem">이미 저장된 것을 읽고 확인</p>
-        <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
-          <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.82rem">browse_kb_entities</strong><br><span class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">literal/filter 조회 — 존재 확인, 목록 훑기</span></div>
-          <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.82rem">snapshot</strong><br><span class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">전체 상태 inspection — score/ranking 없음</span></div>
-          <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.82rem">get_kb_entity_neighbors</strong><br><span class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">특정 엔티티 주변 그래프 조회</span></div>
-          <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.82rem">get_kb_stats</strong><br><span class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">엔티티/릴레이션 수 통계</span></div>
-        </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">검색 2: SEMANTIC RETRIEVAL</div>
+      <h3 style="font-size:1.2rem;font-family:var(--font-kr)">retrieve_kb_graph</h3>
+      <p class="kr-body" style="font-size:.88rem">의미 기반 semantic retrieval</p>
+      <ul class="feature-list" style="margin-top:10px">
+        <li style="font-size:.85rem">embedding 기반 유사도 검색</li>
+        <li style="font-size:.85rem">top-k ranking으로 후보 선별</li>
+        <li style="font-size:.85rem">hop expansion으로 그래프 펼침</li>
+        <li style="font-size:.85rem">exact entity_id lookup <strong>보장 안 됨</strong></li>
+      </ul>
+      <div class="callout" style="font-size:.82rem;margin-top:8px">개념/패턴/문맥 찾기에 적합</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--sage)">
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">조회 (READ / LOOKUP)</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+        <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.78rem">browse_kb_entities</strong><br><span class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">literal/filter — 존재 확인, 목록 훑기</span></div>
+        <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.78rem">snapshot</strong><br><span class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">전체 상태 inspection — score 없음</span></div>
+        <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.78rem">get_kb_entity_neighbors</strong><br><span class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">특정 엔티티 주변 그래프</span></div>
+        <div><strong style="color:var(--accent);font-family:var(--font-mono);font-size:.78rem">get_kb_stats</strong><br><span class="kr-body" style="font-size:.78rem;color:var(--warm-gray)">엔티티/릴레이션 수 통계</span></div>
       </div>
     </div>
   </div>
   <div class="callout anim-4">
-    retrieve는 <strong>"뜻으로 찾기"</strong>, browse는 <strong>"보이는 값으로 훑기"</strong> — 목적에 맞는 방식을 선택
+    <strong>Exact lookup</strong> = 정확히 찾기 &nbsp;|&nbsp; <strong>Semantic</strong> = 뜻으로 찾기 &nbsp;|&nbsp; <strong>Browse</strong> = 보이는 값으로 훑기 — 목적에 맞는 방식을 선택
   </div>
 </div>
 
-<!-- 7: retrieve 상세 -->
-<div class="slide slide--dark" data-slide="7">
+<!-- 8: retrieve 상세 -->
+<div class="slide slide--dark" data-slide="8">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">05-B — Semantic Retrieval 상세</span>
   <h2 class="anim-2">retrieve_kb_graph 동작 흐름</h2>
   <div class="anim-3">
-    <div class="flow-row" style="margin-bottom:20px">
+    <div class="flow-row" style="margin-bottom:16px">
       <div class="flow-step">① Query 입력</div><span class="flow-arrow">→</span>
       <div class="flow-step">② 임베딩 변환</div><span class="flow-arrow">→</span>
       <div class="flow-step">③ 유사 엔티티 점수</div><span class="flow-arrow">→</span>
@@ -281,29 +416,47 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
     </div>
   </div>
   <div class="two-col anim-4" style="gap:48px">
-    <div class="card" style="border-left:3px solid var(--sage)">
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">잘 맞는 경우</div>
-      <ul class="feature-list">
-        <li style="font-size:.92rem">개념/패턴 찾기</li>
-        <li style="font-size:.92rem">관련 문맥 찾기</li>
-        <li style="font-size:.92rem">기억 회수</li>
-        <li style="font-size:.92rem">"이 주제와 가까운 게 뭐지?"</li>
-      </ul>
+    <div>
+      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:12px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">잘 맞는 경우</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem">개념/패턴 찾기</li>
+          <li style="font-size:.88rem">관련 문맥 찾기, 기억 회수</li>
+          <li style="font-size:.88rem">"이 주제와 가까운 게 뭐지?"</li>
+        </ul>
+      </div>
+      <div class="card" style="border-left:3px solid #c0392b">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:#c0392b;margin-bottom:8px">약한 경우</div>
+        <ul class="feature-list">
+          <li style="font-size:.88rem;color:#c0392b">Exact literal match</li>
+          <li style="font-size:.88rem;color:#c0392b">정확한 entity_id 검증</li>
+          <li style="font-size:.88rem;color:#c0392b">Keyword audit</li>
+        </ul>
+        <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:4px">정확한 텍스트를 입력해도 유사도 검색을 해버릴 수 있다</p>
+      </div>
     </div>
-    <div class="card" style="border-left:3px solid #c0392b">
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:#c0392b;margin-bottom:8px">약한 경우</div>
-      <ul class="feature-list">
-        <li style="font-size:.92rem;color:#c0392b">Exact literal match</li>
-        <li style="font-size:.92rem;color:#c0392b">정확한 entity_id 검증</li>
-        <li style="font-size:.92rem;color:#c0392b">Keyword audit</li>
-      </ul>
-      <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:6px">정확한 텍스트를 입력해도 유사도 검색을 해버릴 수 있다</p>
+    <div>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">RETRIEVE 결과 구조</div>
+      <div class="code-block" style="font-size:.82rem">
+        <span class="c">// matches (seed 후보)</span><br>
+        <span class="k">score</span>: <span class="v">0.505</span> <span class="c">← 이번 검색의 매치 점수</span><br>
+        <span class="k">entity_id</span>: <span class="v">"..."</span><br>
+        <span class="k">label</span>: <span class="v">"..."</span><br>
+        <span class="k">summary</span>: <span class="v">"..."</span> <span class="c">← 비어 있을 수도 있음</span><br>
+        <span class="k">relation_count</span>: <span class="v">3</span><br><br>
+        <span class="c">// expanded graph</span><br>
+        <span class="k">nodes</span>: [...] <span class="c">← seed + hop으로 펼쳐진 노드들</span><br>
+        <span class="k">relations</span>: [...] <span class="c">← 확장 과정에 포함된 relation들</span>
+      </div>
+      <div class="callout" style="font-size:.82rem;margin-top:8px">
+        <strong>score</strong>는 엔티티 자체의 데이터가 아니라 <strong>이번 retrieve 결과에서의 match 점수</strong>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- 8: top-k & hops -->
-<div class="slide" data-slide="8">
+<!-- 9: top-k & hops -->
+<div class="slide" data-slide="9">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">06 — top-k와 hop_depth</span>
   <h2 class="anim-2">top-k와 hops의 차이</h2>
@@ -329,10 +482,13 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
       <div class="callout" style="font-size:.85rem;margin-top:8px">키우면 문맥 풍부 but <strong>노이즈 증가</strong>, 그래프 비대화 주의</div>
     </div>
   </div>
+  <div class="callout anim-4" style="margin-top:12px">
+    <strong>예시:</strong> top_k=5, hop_depth=3 → "유사도 높은 5개를 찾고, 그 5개에서 relation을 따라 3단계까지 주변 그래프를 확장" — 결과: matches=5, nodes=12, relations=9처럼 나올 수 있음
+  </div>
 </div>
 
-<!-- 9: 저장 구조 -->
-<div class="slide slide--dark" data-slide="9">
+<!-- 10: 저장 구조 -->
+<div class="slide slide--dark" data-slide="10">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">07 — 저장 구조 <span style="font-size:.72rem;opacity:.5">STORAGE</span></span>
   <h2 class="anim-2">데이터는 어떻게 저장되는가?</h2>
@@ -374,8 +530,8 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
-<!-- 10: 청킹 -->
-<div class="slide" data-slide="10">
+<!-- 11: 청킹 -->
+<div class="slide" data-slide="11">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">08 — 청킹 <span style="font-size:.72rem;opacity:.5">CHUNKING</span></span>
   <h2 class="anim-2">문서는 어떻게 쪼개지는가?</h2>
@@ -404,7 +560,11 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
         <span class="k">heading_path</span>: <span class="v">"GoalSpec > 평가기준"</span><br>
         <span class="k">section_order</span>: <span class="v">3</span><br>
         <span class="k">chunk_index</span>: <span class="v">5</span><br>
-        <span class="k">file_path</span>: <span class="v">"docs/goal_spec.v1.md"</span>
+        <span class="k">section_chunk_index</span>: <span class="v">0</span><br>
+        <span class="k">section_chunk_count</span>: <span class="v">3</span><br>
+        <span class="k">heading_h1~h6</span>: <span class="v">"각 레벨 제목"</span><br>
+        <span class="k">file_path</span>: <span class="v">"docs/goal_spec.v1.md"</span><br>
+        <span class="k">content_sha256</span>: <span class="v">"변경 감지용 해시"</span>
       </div>
     </div>
     <div class="card">
@@ -415,12 +575,15 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
         <li style="font-size:.88rem">chunk ≤ 1700 chars</li>
         <li style="font-size:.88rem">큰 chunk: table, list, JSON</li>
       </ul>
+      <div class="callout warn" style="font-size:.82rem;margin-top:8px">
+        <strong>주의:</strong> file-size cap 때문에 큰 md 파일이 skip될 수 있음 → cap 높여 재검증 필요
+      </div>
     </div>
   </div>
 </div>
 
-<!-- 11: JSON -->
-<div class="slide slide--dark" data-slide="11">
+<!-- 12: JSON -->
+<div class="slide slide--dark" data-slide="12">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">09 — JSON 처리 <span style="font-size:.72rem;opacity:.5">JSON & KB</span></span>
   <h2 class="anim-2">JSON 데이터와 KB</h2>
@@ -450,38 +613,54 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
-<!-- 12: 왜 KB -->
-<div class="slide" data-slide="12">
+<!-- 13: 왜 KB -->
+<div class="slide" data-slide="13">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">10 — 왜 KB를 쓰는가 <span style="font-size:.72rem;opacity:.5">WHY KB?</span></span>
   <h2 class="anim-2">KB를 쓰는 진짜 이유</h2>
-  <p class="anim-2 kr-body" style="font-size:.95rem;color:var(--warm-gray);margin-bottom:16px">반복 실행 사이에서 재사용해야 하는 <strong style="color:var(--ink)">관계·상태·이력</strong>을 구조적으로 기억시켜 다음 의사결정에 쓰기 위해</p>
-  <div class="two-col anim-3" style="gap:48px">
+  <p class="anim-2 kr-body" style="font-size:.92rem;color:var(--warm-gray);margin-bottom:12px">반복 실행 사이에서 재사용해야 하는 <strong style="color:var(--ink)">관계·상태·이력</strong>을 구조적으로 기억시켜 다음 의사결정에 쓰기 위해</p>
+  <div class="three-col anim-3" style="gap:28px">
     <div>
-      <div class="card" style="border-top:3px solid var(--gold);margin-bottom:16px">
+      <div class="card" style="border-top:3px solid var(--gold);margin-bottom:12px">
         <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:6px">문서가 나은 경우</div>
         <ul class="feature-list">
-          <li style="font-size:.88rem">사람이 읽고 이해해야 하는 설명</li>
-          <li style="font-size:.88rem">공유용 문서, 최종 근거/보고서</li>
-          <li style="font-size:.88rem">단순 보관/검색이 주목적</li>
+          <li style="font-size:.85rem">사람이 읽고 이해해야 하는 설명</li>
+          <li style="font-size:.85rem">공유용 문서, 최종 근거/보고서</li>
+          <li style="font-size:.85rem">단순 보관/검색이 주목적</li>
         </ul>
       </div>
     </div>
     <div>
-      <div class="card" style="border-top:3px solid var(--accent);margin-bottom:16px">
+      <div class="card" style="border-top:3px solid var(--accent);margin-bottom:12px">
         <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:6px">KB가 나은 경우</div>
         <ul class="feature-list">
-          <li style="font-size:.88rem">버전 ↔ 정책/실행 결과 연결</li>
-          <li style="font-size:.88rem">trial/evaluation이 다음 실행에 재사용</li>
-          <li style="font-size:.88rem">다음 의사결정에 써야 하는 운영 지식</li>
+          <li style="font-size:.85rem">버전 ↔ 정책/실행 결과 연결</li>
+          <li style="font-size:.85rem">trial/evaluation이 다음 실행에 재사용</li>
+          <li style="font-size:.85rem">다음 의사결정에 써야 하는 운영 지식</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="border-top:3px solid #c0392b;margin-bottom:12px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:#c0392b;margin-bottom:6px">KB가 문서보다 안 좋은 점</div>
+        <ul class="feature-list">
+          <li style="font-size:.85rem">사람 읽기에는 문서가 더 자연스러움</li>
+          <li style="font-size:.85rem">원문 보관에 불리 (파편화됨)</li>
+          <li style="font-size:.85rem">설계 비용이 듦 — 문서는 그냥 쓰면 되지만 KB는 설계하고 써야 함</li>
+          <li style="font-size:.85rem">잘못 설계하면 오히려 더 헷갈림</li>
         </ul>
       </div>
     </div>
   </div>
+  <div class="anim-4" style="margin-top:4px">
+    <div class="callout" style="font-size:.88rem">
+      <strong>Art Task Plan:</strong> 과거 iteration의 결과, 점수, 실패 패턴, 전략 이력을 축적하고 → 다음 iteration의 <strong>전략 선택</strong>(prompt 조정, Evolver mode, 검증 기준)에 재사용 → KB 적합
+    </div>
+  </div>
 </div>
 
-<!-- 13: 설계 원칙 -->
-<div class="slide slide--dark" data-slide="13">
+<!-- 14: 설계 원칙 -->
+<div class="slide slide--dark" data-slide="14">
   <div class="noise"></div><div class="grid-lines"></div>
   <div class="corner-glyph" style="font-size:20rem;top:-30px;right:-20px;color:rgba(255,255,255,.02)">D</div>
   <span class="label anim-1">11 — 설계 원칙 <span style="font-size:.72rem;opacity:.5">DESIGN PRINCIPLES</span></span>
@@ -511,13 +690,26 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
           <strong style="color:#e74c3c">잘못 설계하면 문서보다 더 나빠진다:</strong> 중복 엔티티, 애매한 relation, 불명확한 predicate, 경계 모호함
         </p>
       </div>
-      <table style="text-align:center;margin-top:12px">
+      <table style="text-align:center;margin-top:12px;margin-bottom:16px">
         <thead><tr><th></th><th>Raw Graph</th><th>의미 구분</th><th>식별자</th></tr></thead>
         <tbody>
           <tr><td style="font-weight:700;color:var(--cream)">엔티티</td><td>KBEntity 노드</td><td>label, summary, properties</td><td>entity_id</td></tr>
           <tr><td style="font-weight:700;color:var(--cream)">릴레이션</td><td>KB_RELATES 엣지</td><td>predicate, description</td><td>relation_id</td></tr>
         </tbody>
       </table>
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">UPSERT API 필수/선택 필드</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div class="card" style="padding:12px 16px">
+          <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">upsert_kb_entity</div>
+          <p class="kr-body" style="font-size:.82rem"><strong style="color:var(--cream)">필수:</strong> kb_id, entity_id, label</p>
+          <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">선택: summary, properties_json</p>
+        </div>
+        <div class="card" style="padding:12px 16px">
+          <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">upsert_kb_relation</div>
+          <p class="kr-body" style="font-size:.82rem"><strong style="color:var(--cream)">필수:</strong> kb_id, relation_id, source_entity_id, target_entity_id, predicate</p>
+          <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">선택: description, properties_json</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -525,7 +717,7 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 </div><!-- /deck -->
 
 <div class="progress" id="progress"></div>
-<div class="slide-counter" id="counter">1 / 14</div>
+<div class="slide-counter" id="counter">1 / 15</div>
 
 <script>
 (function(){
