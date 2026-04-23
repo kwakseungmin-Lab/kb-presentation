@@ -414,12 +414,12 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 </div>
 
 <!-- 8: retrieve 상세 -->
-<div class="slide slide--dark" data-slide="8">
+<div class="slide slide--dark" data-slide="8" style="padding:36px 80px">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">05-B — Semantic Retrieval 상세</span>
-  <h2 class="anim-2">retrieve_kb_graph 동작 흐름</h2>
+  <h2 class="anim-2" style="margin-bottom:0.15em">retrieve_kb_graph 동작 흐름</h2>
   <div class="anim-3">
-    <div class="flow-row" style="margin-bottom:16px">
+    <div class="flow-row" style="margin:6px 0 6px">
       <div class="flow-step">① Query 입력</div><span class="flow-arrow">→</span>
       <div class="flow-step">② 임베딩 변환</div><span class="flow-arrow">→</span>
       <div class="flow-step">③ 유사 엔티티 점수</div><span class="flow-arrow">→</span>
@@ -427,40 +427,40 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
       <div class="flow-step" style="border-color:var(--sage)">⑤ hop_depth 펼침</div>
     </div>
   </div>
-  <div class="two-col anim-4" style="gap:48px">
+  <div class="two-col anim-4" style="gap:36px">
     <div>
-      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:12px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">잘 맞는 경우</div>
+      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:8px;padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:6px">잘 맞는 경우</div>
         <ul class="feature-list">
-          <li style="font-size:.88rem">개념/패턴 찾기</li>
-          <li style="font-size:.88rem">관련 문맥 찾기, 기억 회수</li>
-          <li style="font-size:.88rem">"이 주제와 가까운 게 뭐지?"</li>
+          <li style="font-size:.88rem;margin-bottom:4px">개념/패턴 찾기</li>
+          <li style="font-size:.88rem;margin-bottom:4px">관련 문맥 찾기, 기억 회수</li>
+          <li style="font-size:.88rem;margin-bottom:0">"이 주제와 가까운 게 뭐지?"</li>
         </ul>
       </div>
-      <div class="card" style="border-left:3px solid #c0392b">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:#c0392b;margin-bottom:8px">약한 경우</div>
+      <div class="card" style="border-left:3px solid #c0392b;padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:#c0392b;margin-bottom:6px">약한 경우</div>
         <ul class="feature-list">
-          <li style="font-size:.88rem;color:#c0392b">Exact literal match</li>
-          <li style="font-size:.88rem;color:#c0392b">정확한 entity_id 검증</li>
-          <li style="font-size:.88rem;color:#c0392b">Keyword audit</li>
+          <li style="font-size:.88rem;color:#c0392b;margin-bottom:4px">Exact literal match</li>
+          <li style="font-size:.88rem;color:#c0392b;margin-bottom:4px">정확한 entity_id 검증</li>
+          <li style="font-size:.88rem;color:#c0392b;margin-bottom:4px">Keyword audit</li>
         </ul>
-        <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:4px">정확한 텍스트를 입력해도 유사도 검색을 해버릴 수 있다</p>
+        <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray);margin-top:2px">정확한 텍스트를 입력해도 유사도 검색을 해버릴 수 있다</p>
       </div>
     </div>
     <div>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">RETRIEVE 결과 구조</div>
-      <div class="code-block" style="font-size:.82rem">
+      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:6px">RETRIEVE 결과 구조</div>
+      <div class="code-block" style="font-size:.82rem;line-height:1.55;padding:12px 16px">
         <span class="c">// matches (seed 후보)</span><br>
         <span class="k">score</span>: <span class="v">0.505</span> <span class="c">← 이번 검색의 매치 점수</span><br>
         <span class="k">entity_id</span>: <span class="v">"..."</span><br>
         <span class="k">label</span>: <span class="v">"..."</span><br>
         <span class="k">summary</span>: <span class="v">"..."</span> <span class="c">← 비어 있을 수도 있음</span><br>
-        <span class="k">relation_count</span>: <span class="v">3</span><br><br>
+        <span class="k">relation_count</span>: <span class="v">3</span><br>
         <span class="c">// expanded graph</span><br>
         <span class="k">nodes</span>: [...] <span class="c">← seed + hop으로 펼쳐진 노드들</span><br>
         <span class="k">relations</span>: [...] <span class="c">← 확장 과정에 포함된 relation들</span>
       </div>
-      <div class="callout" style="font-size:.82rem;margin-top:8px">
+      <div class="callout" style="font-size:.82rem;margin-top:8px;padding:10px 16px">
         <strong>score</strong>는 엔티티 자체의 데이터가 아니라 <strong>이번 retrieve 결과에서의 match 점수</strong>
       </div>
     </div>
