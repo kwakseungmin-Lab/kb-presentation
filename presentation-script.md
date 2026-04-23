@@ -82,15 +82,15 @@ KB 읽기 도구들입니다.
 
 목적별로 5가지 도구가 있습니다.
 
-첫 번째, 의미로 찾기는 retrieve_kb_graph입니다. 자연어 query로 유사한 것 찾기, embedding 기반에 top-k ranking, hop expansion으로 그래프 확장합니다. "oversize chunking 관련 내용" 같은 걸 찾을 때 씁니다.
+첫 번째, Semantic search는 retrieve_kb_graph입니다. 의미로 찾기, 패턴이나 비교, 맥락 찾기에 쓰고, embedding 기반에 top-k ranking, hop expansion으로 그래프 확장합니다. "oversize markdown chunking rule 뭐였지?" 같은 걸 찾을 때 씁니다.
 
-두 번째, 이름이나 라벨로 찾기는 browse_kb_entities입니다. exact, prefix, query 필터로 정확한 매치를 하고, 존재 확인이나 목록 훑기에 씁니다. "TaskPlan으로 시작하는 entity들" 같은 걸 찾을 때 쓰고요.
+두 번째, Literal/Exact lookup은 browse_kb_entities입니다. 존재 확인, exact key나 label, prefix로 후보 찾기를 하고, semantic search가 아니라 literal/filter lookup입니다. "TaskPlanVersion7 있나?", "active_goal_spec 같은 키 있나?" 이런 걸 찾을 때 쓰고요.
 
-세 번째, 노드 주변 보기는 get_kb_entity_neighbors입니다. 특정 entity_id의 관계들, incoming/outgoing relations을 봅니다.
+세 번째, Local graph inspection은 get_kb_entity_neighbors입니다. 특정 엔티티 주변 relation 확인하고, entity_id가 있어야 합니다. "이 엔티티에 section_has_chunk 붙어 있나?" 같은 걸 확인합니다.
 
-네 번째, 전체 상태 보기는 snapshot입니다. 전체 그래프 덤프를 하고, score 없이 현재 저장 구조를 확인합니다.
+네 번째, Whole-KB inspection은 snapshot이나 UI snapshot입니다. 현재 저장 상태 전체 점검하고, score/top_k/hop 개념 없이 "relation이 진짜 0개야?" 같은 걸 확인합니다.
 
-다섯 번째, 통계 보기는 get_kb_stats입니다. entity_count, relation_count 같은 숫자만 확인합니다.
+다섯 번째, Aggregate stats는 get_kb_stats입니다. entity 수, relation 수만 확인합니다. "엔티티 몇 개, relation 몇 개?" 이런 거죠.
 
 ---
 
