@@ -356,53 +356,54 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">05 — KB 읽기 도구 <span style="font-size:.72rem;opacity:.5">READING TOOLS</span></span>
   <h2 class="anim-2" style="margin-bottom:0.2em">목적별 KB 읽기 도구 5가지</h2>
-  <div class="two-col anim-3" style="gap:36px">
-    <div>
-      <div class="card" style="border-left:3px solid var(--accent);margin-bottom:8px;padding:10px 14px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:4px">1. Semantic search</div>
-        <h3 style="font-size:.95rem;font-family:var(--font-mono);margin-bottom:4px">retrieve_kb_graph</h3>
-        <ul class="feature-list" style="margin-top:4px">
-          <li style="font-size:.82rem;margin-bottom:3px">의미로 찾기, 패턴/비교/맥락 찾기</li>
-          <li style="font-size:.82rem;margin-bottom:3px">embedding 기반, top-k ranking</li>
-          <li style="font-size:.82rem;margin-bottom:3px">hop expansion으로 그래프 확장</li>
-        </ul>
+  <div class="two-col anim-3" style="gap:24px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card" style="border-left:3px solid var(--accent);padding:12px 16px">
+        <h3 style="font-family:var(--font-mono);font-size:1rem;font-weight:400;margin-bottom:3px">retrieve_kb_graph</h3>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--accent);letter-spacing:.08em;margin-bottom:10px">SEMANTIC RETRIEVAL</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline">
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">언제</span><span style="font-family:var(--font-kr);font-size:.8rem">의미/패턴/비교/맥락 찾기</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">입력</span><span style="font-family:var(--font-mono);font-size:.78rem">query</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">특징</span><span style="font-family:var(--font-kr);font-size:.8rem">embedding 기반, top-k ranking, hop expansion</span>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--gold);padding:10px 14px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:4px">2. Literal / Filter lookup</div>
-        <h3 style="font-size:.95rem;font-family:var(--font-mono);margin-bottom:4px">browse_kb_entities</h3>
-        <ul class="feature-list" style="margin-top:4px">
-          <li style="font-size:.82rem;margin-bottom:3px">존재 확인, 후보 찾기, 목록 훑기</li>
-          <li style="font-size:.82rem;margin-bottom:3px">label / entity_id_prefix / query 필터</li>
-          <li style="font-size:.82rem;margin-bottom:3px">semantic search 아님</li>
-        </ul>
+      <div class="card" style="border-left:3px solid var(--gold);padding:12px 16px">
+        <h3 style="font-family:var(--font-mono);font-size:1rem;font-weight:400;margin-bottom:3px">browse_kb_entities</h3>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--gold);letter-spacing:.08em;margin-bottom:10px">LITERAL / FILTER LOOKUP</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline">
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">언제</span><span style="font-family:var(--font-kr);font-size:.8rem">존재 확인, 후보 찾기, 목록 훑기</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">입력</span><span style="font-family:var(--font-mono);font-size:.78rem">kb_id + optional filter</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">특징</span><span style="font-family:var(--font-kr);font-size:.8rem">semantic search 아님 — exact match 용도</span>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:8px;padding:10px 14px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">3. Local graph inspection</div>
-        <h3 style="font-size:.95rem;font-family:var(--font-mono);margin-bottom:4px">get_kb_entity_neighbors</h3>
-        <ul class="feature-list" style="margin-top:4px">
-          <li style="font-size:.82rem;margin-bottom:3px">특정 엔티티 주변 relation 확인</li>
-          <li style="font-size:.82rem;margin-bottom:3px">incoming/outgoing relations</li>
-          <li style="font-size:.82rem;margin-bottom:3px">entity_id가 있어야 함</li>
-        </ul>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card" style="border-left:3px solid var(--sage);padding:12px 16px">
+        <h3 style="font-family:var(--font-mono);font-size:1rem;font-weight:400;margin-bottom:3px">get_kb_entity_neighbors</h3>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--sage);letter-spacing:.08em;margin-bottom:10px">LOCAL GRAPH INSPECTION</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline">
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">언제</span><span style="font-family:var(--font-kr);font-size:.8rem">특정 엔티티 주변 relation 확인</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">입력</span><span style="font-family:var(--font-mono);font-size:.78rem">entity_id</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">특징</span><span style="font-family:var(--font-kr);font-size:.8rem">incoming / outgoing relation 확인</span>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--lavender);margin-bottom:8px;padding:10px 14px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:4px">4. Stored graph inspection</div>
-        <h3 style="font-size:.95rem;font-family:var(--font-mono);margin-bottom:4px">snapshot</h3>
-        <ul class="feature-list" style="margin-top:4px">
-          <li style="font-size:.82rem;margin-bottom:3px">현재 저장 상태 inspection</li>
-          <li style="font-size:.82rem;margin-bottom:3px">semantic retrieve 결과 아님</li>
-          <li style="font-size:.82rem;margin-bottom:3px">score/top_k/hop 개념 없음</li>
-        </ul>
+      <div class="card" style="border-left:3px solid var(--lavender);padding:12px 16px">
+        <h3 style="font-family:var(--font-mono);font-size:1rem;font-weight:400;margin-bottom:3px">snapshot</h3>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--lavender);letter-spacing:.08em;margin-bottom:10px">STORED GRAPH INSPECTION</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline">
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">언제</span><span style="font-family:var(--font-kr);font-size:.8rem">현재 저장 상태 전체 점검</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">입력</span><span style="font-family:var(--font-mono);font-size:.78rem">KB 선택</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">특징</span><span style="font-family:var(--font-kr);font-size:.8rem">semantic retrieve 결과 아님, score/top_k/hop 없음. UI snapshot view에서도 확인 가능</span>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--blush);padding:10px 14px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--blush);margin-bottom:4px">5. Aggregate stats</div>
-        <h3 style="font-size:.95rem;font-family:var(--font-mono);margin-bottom:4px">get_kb_stats</h3>
-        <ul class="feature-list" style="margin-top:4px">
-          <li style="font-size:.82rem;margin-bottom:3px">entity 수 / relation 수만 확인</li>
-          <li style="font-size:.82rem;margin-bottom:3px">숫자만 확인</li>
-        </ul>
+      <div class="card" style="border-left:3px solid var(--blush);padding:12px 16px">
+        <h3 style="font-family:var(--font-mono);font-size:1rem;font-weight:400;margin-bottom:3px">get_kb_stats</h3>
+        <div style="font-family:var(--font-mono);font-size:.62rem;color:var(--blush);letter-spacing:.08em;margin-bottom:10px">AGGREGATE STATS</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline">
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">언제</span><span style="font-family:var(--font-kr);font-size:.8rem">entity / relation 수만 확인</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">입력</span><span style="font-family:var(--font-mono);font-size:.78rem">kb_id</span>
+          <span style="font-family:var(--font-mono);font-size:.62rem;color:var(--warm-gray)">특징</span><span style="font-family:var(--font-kr);font-size:.8rem">숫자만 반환</span>
+        </div>
       </div>
     </div>
   </div>
