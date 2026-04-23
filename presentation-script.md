@@ -84,11 +84,11 @@ KB 읽기 도구들입니다.
 
 첫 번째, Semantic search는 retrieve_kb_graph입니다. 의미로 찾기, 패턴이나 비교, 맥락 찾기에 쓰고, embedding 기반에 top-k ranking, hop expansion으로 그래프 확장합니다. "oversize markdown chunking rule 뭐였지?" 같은 걸 찾을 때 씁니다.
 
-두 번째, Literal/Exact lookup은 browse_kb_entities입니다. 존재 확인, exact key나 label, prefix로 후보 찾기를 하고, semantic search가 아니라 literal/filter lookup입니다. "TaskPlanVersion7 있나?", "active_goal_spec 같은 키 있나?" 이런 걸 찾을 때 쓰고요.
+두 번째, Literal/Filter lookup은 browse_kb_entities입니다. 존재 확인, 후보 찾기, 목록 훑기를 하고, label/entity_id_prefix/query 필터로 작동합니다. semantic search가 아닙니다. "TaskPlanVersion7 있나?", "tp_ prefix 엔티티 뭐 있지?", "이 이름 비슷한 엔티티 있나?" 이런 걸 찾을 때 쓰고요.
 
 세 번째, Local graph inspection은 get_kb_entity_neighbors입니다. 특정 엔티티 주변 relation 확인하고, entity_id가 있어야 합니다. "이 엔티티에 section_has_chunk 붙어 있나?" 같은 걸 확인합니다.
 
-네 번째, Whole-KB inspection은 snapshot이나 UI snapshot입니다. 현재 저장 상태 전체 점검하고, score/top_k/hop 개념 없이 "relation이 진짜 0개야?" 같은 걸 확인합니다.
+네 번째, Stored graph inspection은 snapshot이나 UI snapshot입니다. 현재 저장 상태 inspection하고, semantic retrieve 결과가 아니며, score/top_k/hop 개념 없이 "relation이 진짜 0개야?" 같은 걸 확인합니다.
 
 다섯 번째, Aggregate stats는 get_kb_stats입니다. entity 수, relation 수만 확인합니다. "엔티티 몇 개, relation 몇 개?" 이런 거죠.
 
