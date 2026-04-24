@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Knowledge Base 기초</title>
+<title>Knowledge Base pt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -91,11 +91,10 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   <div class="noise"></div>
   <div class="corner-glyph" style="font-size:28rem;top:-80px;right:-40px;color:rgba(255,255,255,.02)">K</div>
   <div class="corner-glyph" style="font-size:20rem;bottom:-40px;left:-20px;color:rgba(255,255,255,.015)">B</div>
-  <span class="label anim-1">KNOWLEDGE BASE &middot; 기초</span>
-  <h1 class="anim-2" style="margin-top:16px">Knowledge Base</h1>
-  <p class="anim-3 kr" style="font-size:1.4rem;color:var(--warm-gray)">기초부터 활용까지</p>
-  <div class="anim-4" style="width:48px;height:2px;background:var(--accent);margin:28px auto 24px"></div>
-  <p class="anim-4 kr" style="font-size:1.1rem;color:rgba(255,255,255,.45);max-width:700px;text-align:center">
+  <span class="label anim-1">KNOWLEDGE BASE</span>
+  <h1 class="anim-2" style="margin-top:16px">Knowledge Base pt</h1>
+  <div class="anim-3" style="width:48px;height:2px;background:var(--accent);margin:28px auto 24px"></div>
+  <p class="anim-3 kr" style="font-size:1.1rem;color:rgba(255,255,255,.45);max-width:700px;text-align:center">
     KB가 뭔지, 어떻게 저장하고 조회하는지 — 설계 전에 알아야 할 내용들을 정리했습니다.
   </p>
 </div>
@@ -342,72 +341,97 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
   </div>
 </div>
 
-<!-- 6: 섹션 — KB 읽기 도구 -->
+<!-- 6: 섹션 — KB 읽기 -->
 <div class="slide slide--accent" data-slide="6">
   <div class="noise"></div>
   <span class="label anim-1" style="color:rgba(255,255,255,.6)">SECTION</span>
-  <h1 class="anim-2" style="margin-top:12px">KB 읽기 도구</h1>
-  <p class="anim-3 kr" style="font-size:1.1rem;color:rgba(255,255,255,.6);margin-top:8px">목적에 맞는 도구 선택하기</p>
-  <div class="anim-4" style="width:48px;height:2px;background:rgba(255,255,255,.4);margin:20px auto"></div>
+  <h1 class="anim-2" style="margin-top:12px">KB 읽기</h1>
+  <div class="anim-3" style="width:48px;height:2px;background:rgba(255,255,255,.4);margin:20px auto"></div>
 </div>
 
 <!-- 7: KB 읽기 도구 5가지 -->
 <div class="slide" data-slide="7">
   <div class="noise"></div><div class="grid-lines"></div>
   <span class="label anim-1">05 — KB 읽기 도구 <span style="font-size:.72rem;opacity:.5">READING TOOLS</span></span>
-  <h2 class="anim-2">목적별 KB 읽기 도구 5가지</h2>
-  <div class="two-col anim-3" style="gap:48px">
-    <div>
-      <div class="card" style="border-left:3px solid var(--accent);margin-bottom:12px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">1. Semantic search</div>
-        <h3 style="font-size:1.1rem;font-family:var(--font-mono)">retrieve_kb_graph</h3>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.85rem">의미로 찾기, 패턴/비교/맥락 찾기</li>
-          <li style="font-size:.85rem">embedding 기반, top-k ranking</li>
-          <li style="font-size:.85rem">hop expansion으로 그래프 확장</li>
-        </ul>
-        <div class="callout" style="font-size:.82rem;margin-top:8px">예: "oversize markdown chunking rule 뭐였지?"</div>
+  <h2 class="anim-2" style="font-size:2.4rem">KB 읽기: 도구와 방식</h2>
+
+  <!-- 도구 섹션 -->
+  <div class="anim-3" style="margin-bottom:24px">
+    <h3 style="font-size:1.3rem;color:var(--accent);margin-bottom:12px">5개 도구</h3>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="background:rgba(74,140,111,.08);border:1px solid var(--accent);border-radius:6px;padding:8px 16px">
+        <code style="font-family:var(--font-mono);font-size:.9rem;color:#000;font-weight:500">retrieve_kb_graph</code>
       </div>
-      <div class="card" style="border-left:3px solid var(--gold);margin-bottom:12px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:8px">2. Literal / Filter lookup</div>
-        <h3 style="font-size:1.1rem;font-family:var(--font-mono)">browse_kb_entities</h3>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.85rem">존재 확인, 후보 찾기, 목록 훑기</li>
-          <li style="font-size:.85rem">label / entity_id_prefix / query 필터</li>
-          <li style="font-size:.85rem">semantic search 아님</li>
-        </ul>
-        <div class="callout" style="font-size:.82rem;margin-top:8px">예: "TaskPlanVersion7 있나?", "tp_ prefix 엔티티 뭐 있지?", "이 이름 비슷한 엔티티 있나?"</div>
+      <div style="background:rgba(212,162,127,.08);border:1px solid var(--gold);border-radius:6px;padding:8px 16px">
+        <code style="font-family:var(--font-mono);font-size:.9rem;color:#000;font-weight:500">browse_kb_entities</code>
+      </div>
+      <div style="background:rgba(188,209,202,.08);border:1px solid var(--sage);border-radius:6px;padding:8px 16px">
+        <code style="font-family:var(--font-mono);font-size:.9rem;color:#000;font-weight:500">get_kb_entity_neighbors</code>
+      </div>
+      <div style="background:rgba(203,202,219,.08);border:1px solid var(--lavender);border-radius:6px;padding:8px 16px">
+        <code style="font-family:var(--font-mono);font-size:.9rem;color:#000;font-weight:500">snapshot</code>
+      </div>
+      <div style="background:rgba(235,206,206,.08);border:1px solid var(--blush);border-radius:6px;padding:8px 16px">
+        <code style="font-family:var(--font-mono);font-size:.9rem;color:#000;font-weight:500">get_kb_stats</code>
       </div>
     </div>
-    <div>
-      <div class="card" style="border-left:3px solid var(--sage);margin-bottom:12px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:8px">3. Local graph inspection</div>
-        <h3 style="font-size:1.1rem;font-family:var(--font-mono)">get_kb_entity_neighbors</h3>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.85rem">특정 엔티티 주변 relation 확인</li>
-          <li style="font-size:.85rem">incoming/outgoing relations</li>
-          <li style="font-size:.85rem">entity_id가 있어야 함</li>
-        </ul>
-        <div class="callout" style="font-size:.82rem;margin-top:8px">예: "이 엔티티에 section_has_chunk 붙어 있나?"</div>
+  </div>
+
+  <!-- 목적별 사용 방식 섹션 -->
+  <div class="anim-4">
+    <h3 style="font-size:1.3rem;color:var(--accent);margin-bottom:16px">목적별 사용 방식</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div>
+        <div class="card" style="padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+            <div style="width:24px;height:24px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:600">1</div>
+            <strong style="font-family:var(--font-kr);font-size:.95rem">의미로 찾기</strong>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-left:36px">질문으로 관련 entity/fact/그래프 문맥 찾기 → <code style="color:#000;font-size:.75rem;font-weight:500">retrieve_kb_graph</code></p>
+        </div>
+
+        <div class="card" style="padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+            <div style="width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:600">2</div>
+            <strong style="font-family:var(--font-kr);font-size:.95rem">entity_id 찾기/확인</strong>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-left:36px">단서로 ID 찾기 + ID로 확인 → <code style="color:#000;font-size:.75rem;font-weight:500">browse_kb_entities</code></p>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+            <div style="width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:600">3</div>
+            <strong style="font-family:var(--font-kr);font-size:.95rem">특정 엔티티 주변 관계</strong>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-left:36px">entity_id로 주변 relation 읽기 → <code style="color:#000;font-size:.75rem;font-weight:500">get_kb_entity_neighbors</code></p>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--lavender);margin-bottom:12px">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:8px">4. Stored graph inspection</div>
-        <h3 style="font-size:1.1rem;font-family:var(--font-mono)">snapshot / UI snapshot</h3>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.85rem">현재 저장 상태 inspection</li>
-          <li style="font-size:.85rem">semantic retrieve 결과 아님</li>
-          <li style="font-size:.85rem">score/top_k/hop 개념 없음</li>
-        </ul>
-        <div class="callout" style="font-size:.82rem;margin-top:8px">예: "relation이 진짜 0개야?"</div>
-      </div>
-      <div class="card" style="border-left:3px solid var(--blush)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--blush);margin-bottom:8px">5. Aggregate stats</div>
-        <h3 style="font-size:1.1rem;font-family:var(--font-mono)">get_kb_stats</h3>
-        <ul class="feature-list" style="margin-top:8px">
-          <li style="font-size:.85rem">entity 수 / relation 수만 확인</li>
-          <li style="font-size:.85rem">숫자만 확인</li>
-        </ul>
-        <div class="callout" style="font-size:.82rem;margin-top:8px">예: "엔티티 몇 개, relation 몇 개?"</div>
+
+      <div>
+        <div class="card" style="padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+            <div style="width:24px;height:24px;background:var(--lavender);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:600">4</div>
+            <strong style="font-family:var(--font-kr);font-size:.95rem">저장 상태 점검</strong>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-left:36px">현재 저장된 그래프 상태 inspection → <code style="color:#000;font-size:.75rem;font-weight:500">snapshot</code></p>
+        </div>
+
+        <div class="card" style="padding:14px;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px">
+            <div style="width:24px;height:24px;background:var(--blush);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;font-weight:600">5</div>
+            <strong style="font-family:var(--font-kr);font-size:.95rem">개수/규모 확인</strong>
+          </div>
+          <p style="font-size:.78rem;color:var(--ink-light);margin-left:36px">엔티티 수, 관계 수만 확인 → <code style="color:#000;font-size:.75rem;font-weight:500">get_kb_stats</code></p>
+        </div>
+
+        <div style="background:rgba(74,140,111,.06);border:1px solid var(--accent);border-radius:8px;padding:12px;margin-top:12px">
+          <p style="font-family:var(--font-kr);font-size:.72rem;line-height:1.5;color:var(--ink-light)">
+            <strong style="color:var(--accent)">💡 핵심:</strong><br>
+            • semantic은 retrieve_kb_graph 하나뿐<br>
+            • browse_kb_entities가 entity_id 찾기/확인 겸함<br>
+            • get_kb_entity_neighbors는 ID 있어야만 실행 가능
+          </p>
+        </div>
       </div>
     </div>
   </div>
