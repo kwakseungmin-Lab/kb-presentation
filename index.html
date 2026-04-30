@@ -655,54 +655,108 @@ td{padding:10px 16px;font-family:var(--font-kr);font-size:.88rem;border-bottom:1
 </div>
 
 <!-- 14: 설계 원칙 -->
-<div class="slide slide--dark" data-slide="13">
+<div class="slide slide--dark" data-slide="13" style="padding:30px 60px">
   <div class="noise"></div><div class="grid-lines"></div>
-  <div class="corner-glyph" style="font-size:20rem;top:-30px;right:-20px;color:rgba(255,255,255,.02)">D</div>
   <span class="label anim-1">10 — 설계 원칙 <span style="font-size:.72rem;opacity:.5">DESIGN PRINCIPLES</span></span>
-  <h2 class="anim-2">KB 설계 시 꼭 먼저 정할 것</h2>
-  <div class="two-col anim-3" style="gap:48px">
+  <h2 class="anim-2" style="font-size:2.2rem;margin-bottom:0.3em">KB 설계 시 꼭 먼저 정할 4가지</h2>
+  <p class="anim-2" style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:16px">KB를 설계하기 전에 반드시 이 4가지를 명확히 정의해야 합니다. 하나라도 막히면 아직 설계 단계가 아닙니다.</p>
+
+  <div class="anim-3" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <!-- 왼쪽 열 -->
     <div style="display:flex;flex-direction:column;gap:12px">
-      <div class="card" style="border-left:3px solid var(--accent)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:6px">1. 엔티티를 어떻게 나눌지</div>
-        <p class="kr-body" style="font-size:.88rem">어떤 대상을 독립 엔티티로 관리할지 단위를 정함</p>
+      <div class="card" style="border-left:3px solid var(--accent);padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:4px">1. 엔티티를 어떻게 나눌지</div>
+        <p class="kr-body" style="font-size:.82rem;margin-bottom:0">어떤 대상을 독립 엔티티로 관리할지 단위를 정함</p>
       </div>
-      <div class="card" style="border-left:3px solid var(--sage)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:6px">2. RELATION 종류</div>
-        <p class="kr-body" style="font-size:.88rem">어떤 관계들을 정의할지 (refers_to, supersedes 등)</p>
+
+      <div class="card" style="border-left:3px solid var(--sage);padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">2. RELATION 종류</div>
+        <p class="kr-body" style="font-size:.82rem;margin-bottom:6px">어떤 관계들을 정의할지 - predicate 어휘를 일관되게 정의</p>
+        <div style="margin-top:8px;padding:8px;background:rgba(255,255,255,.03);border-radius:6px">
+          <p class="kr-body" style="font-size:.75rem;color:var(--warm-gray);margin-bottom:4px"><strong>고려사항:</strong></p>
+          <ul style="font-size:.72rem;color:var(--warm-gray);margin:0;padding-left:16px">
+            <li>같은 관계에 다른 단어 쓰면 검색이 깨짐</li>
+            <li>방향을 항상 고정 (예: tool → uses_api → api)</li>
+            <li>관계의 본질은 predicate에, 부가정보는 properties에</li>
+          </ul>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--gold)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:6px">3. ID 규칙</div>
-        <p class="kr-body" style="font-size:.88rem">중복 없이 exact lookup 가능해야 함</p>
+
+      <div class="card" style="border-left:3px solid var(--gold);padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--gold);margin-bottom:4px">3. ID 규칙</div>
+        <p class="kr-body" style="font-size:.82rem;margin-bottom:6px">중복 없이 exact lookup 가능한 체계적인 ID 규칙</p>
+        <div style="margin-top:8px;padding:8px;background:rgba(255,255,255,.03);border-radius:6px">
+          <p class="kr-body" style="font-size:.75rem;color:var(--warm-gray);margin-bottom:4px"><strong>ID 설계 원칙:</strong></p>
+          <ul style="font-size:.72rem;color:var(--warm-gray);margin:0;padding-left:16px">
+            <li>보면 바로 뭔지 알 수 있어야 함</li>
+            <li>중복이 절대 없어야 함</li>
+            <li>계층 구조를 반영해야 함</li>
+          </ul>
+        </div>
       </div>
-      <div class="card" style="border-left:3px solid var(--lavender)">
-        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:6px">4. 경계 설정</div>
-        <p class="kr-body" style="font-size:.88rem">운영 메모, 설계, 정책, 상태가 섞이지 않게</p>
+
+      <div class="card" style="border-left:3px solid var(--lavender);padding:12px 16px">
+        <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--lavender);margin-bottom:4px">4. 경계를 어디까지 둘지</div>
+        <p class="kr-body" style="font-size:.82rem;margin-bottom:0">KB의 범위와 책임 영역을 명확히 정의</p>
       </div>
     </div>
-    <div>
-      <div style="margin-bottom:16px;padding:16px 20px;background:rgba(192,57,43,.08);border-radius:10px;border-left:3px solid #c0392b">
-        <p class="kr-body" style="font-size:.92rem;color:var(--cream);max-width:unset">
-          <strong style="color:#e74c3c">잘못 설계하면 문서보다 더 나빠진다:</strong> 중복 엔티티, 애매한 relation, 불명확한 predicate, 경계 모호함
+
+    <!-- 오른쪽 열 -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="background:rgba(74,140,111,.08);border:1px solid var(--accent);padding:12px">
+        <p style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:6px">자주 쓰이는 predicate 예시:</p>
+        <ul style="font-size:.72rem;color:var(--cream);margin:0;padding-left:16px;line-height:1.5">
+          <li><code style="color:var(--sage)">refers_to</code> = 이 entity가 저 entity를 참고</li>
+          <li><code style="color:var(--sage)">supersedes</code> = 이 버전이 이전 버전을 대체</li>
+          <li><code style="color:var(--sage)">evaluated_by</code> = 이 Task Plan이 이 평가를 받음</li>
+          <li><code style="color:var(--sage)">caused_by</code> = 이 실패가 이 원인으로 발생</li>
+          <li><code style="color:var(--sage)">uses_tool</code> = 이 entity가 저 tool을 사용</li>
+          <li><code style="color:var(--sage)">documented_in</code> = 이 entity의 문서가 저기에 있음</li>
+          <li><code style="color:var(--sage)">retrieves_from_module</code> = 이 entity가 저 모듈에서 데이터 가져옴</li>
+        </ul>
+      </div>
+
+      <div style="padding:12px 16px;background:rgba(192,57,43,.08);border-radius:8px;border-left:3px solid #c0392b">
+        <p class="kr-body" style="font-size:.85rem;color:var(--cream);max-width:unset;margin:0">
+          <strong style="color:#e74c3c">잘못 설계하면 문서보다 더 나빠진다:</strong><br>
+          중복 엔티티, 애매한 relation, 불명확한 predicate, 경계 모호함
         </p>
       </div>
-      <table style="text-align:center;margin-top:12px;margin-bottom:16px">
-        <thead><tr><th></th><th>Raw Graph</th><th>의미 구분</th><th>식별자</th></tr></thead>
+
+      <table style="text-align:center;margin-top:8px;font-size:.75rem">
+        <thead><tr>
+          <th style="padding:6px 10px"></th>
+          <th style="padding:6px 10px">Raw Graph</th>
+          <th style="padding:6px 10px">의미 구분</th>
+          <th style="padding:6px 10px">식별자</th>
+        </tr></thead>
         <tbody>
-          <tr><td style="font-weight:700;color:var(--cream)">엔티티</td><td>KBEntity 노드</td><td>label, summary, properties</td><td>entity_id</td></tr>
-          <tr><td style="font-weight:700;color:var(--cream)">릴레이션</td><td>KB_RELATES 엣지</td><td>predicate, description</td><td>relation_id</td></tr>
+          <tr>
+            <td style="font-weight:700;color:var(--cream);padding:6px 10px">엔티티</td>
+            <td style="padding:6px 10px">KBEntity 노드</td>
+            <td style="padding:6px 10px;font-size:.7rem">label, summary, properties</td>
+            <td style="padding:6px 10px">entity_id</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--cream);padding:6px 10px">릴레이션</td>
+            <td style="padding:6px 10px">KB_RELATES 엣지</td>
+            <td style="padding:6px 10px;font-size:.7rem">predicate, description</td>
+            <td style="padding:6px 10px">relation_id</td>
+          </tr>
         </tbody>
       </table>
-      <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent);margin-bottom:8px">UPSERT API 필수/선택 필드</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <div class="card" style="padding:12px 16px">
-          <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">upsert_kb_entity</div>
-          <p class="kr-body" style="font-size:.82rem"><strong style="color:var(--cream)">필수:</strong> kb_id, entity_id, label</p>
-          <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">선택: summary, properties_json</p>
+
+      <div style="font-family:var(--font-mono);font-size:.68rem;color:var(--accent);margin-top:8px;margin-bottom:4px">UPSERT API 필수/선택 필드</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div class="card" style="padding:8px 10px">
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--sage);margin-bottom:2px">upsert_kb_entity</div>
+          <p class="kr-body" style="font-size:.7rem;margin:0"><strong style="color:var(--cream)">필수:</strong> kb_id, entity_id, label</p>
+          <p class="kr-body" style="font-size:.7rem;color:var(--warm-gray);margin:0">선택: summary, properties_json</p>
         </div>
-        <div class="card" style="padding:12px 16px">
-          <div style="font-family:var(--font-mono);font-size:.72rem;color:var(--sage);margin-bottom:4px">upsert_kb_relation</div>
-          <p class="kr-body" style="font-size:.82rem"><strong style="color:var(--cream)">필수:</strong> kb_id, relation_id, source_entity_id, target_entity_id, predicate</p>
-          <p class="kr-body" style="font-size:.82rem;color:var(--warm-gray)">선택: description, properties_json</p>
+        <div class="card" style="padding:8px 10px">
+          <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--sage);margin-bottom:2px">upsert_kb_relation</div>
+          <p class="kr-body" style="font-size:.7rem;margin:0"><strong style="color:var(--cream)">필수:</strong> kb_id, relation_id, source_entity_id, target_entity_id, predicate</p>
+          <p class="kr-body" style="font-size:.7rem;color:var(--warm-gray);margin:0">선택: description, properties_json</p>
         </div>
       </div>
     </div>
